@@ -55,7 +55,6 @@ words = [format("une odeur de moule"),
         format("la messe du dimanche"),
         format("hitler"),
         format("ma bite"),
-        format("20cm de bonheur"),
         format("les derniers centimètres"),
         format("un autiste"),
         format("faire l'hélicoptère devant sa mère"),
@@ -111,7 +110,8 @@ words = [format("une odeur de moule"),
         format("souffler dans la chicha"),
         format("les phantoms"),
         format("tirer la chasse d'eau"),
-        format("bernard Tapis"),]
+        format("bernard Tapis"),
+        format("20cm de bonheur"),]
 
 
 def construct(sentences_list, wordlist):
@@ -119,7 +119,7 @@ def construct(sentences_list, wordlist):
     # sentences and a list of words
 
     # Setting up two empty dictionnary who will later be filled with random sentences and words
-    sentences_choices = {}
+    # sentences_choices = {}
     word_choices = {}
 
     # TODO faire pop les phrases choisies par random pour ne pas avoir de doublons
@@ -127,7 +127,7 @@ def construct(sentences_list, wordlist):
     # Quick check to see if the list are not empty
     if (len(sentences) & len(words)) > 0:
 
-        print("Sélectionner une des phrases à compléter")
+        print("Sélectionner une des phrases à compléter:\n")
 
         # In this loop we are choosing randomly three sentences in the dictionnary sentences
         # and adding them one by one the dictionnary to get for each sentences a key and value
@@ -169,11 +169,12 @@ def construct(sentences_list, wordlist):
 
             # Same proccess here to select the word
             for i in range(1, 6):
-                word_choices["{0}".format(i)] = random.choice(words)
+                word_choices["{0}".format(i)] = words.pop(words.index(random.choice(words)))
 
             # Then we display each key and value for the selection of the sentence for the words
             for key, value in word_choices.items():
-                print(key, "=", value)
+                    print(key, "=", value)
+                
 
             # Testing the input before getting to the final step
             while True:
