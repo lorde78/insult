@@ -127,7 +127,7 @@ def construct(sentences_list, wordlist):
     # Quick check to see if the list are not empty
     if (len(sentences) & len(words)) > 0:
 
-        print("Sélectionner une des phrases à compléter:\n")
+        print("La phrase à compléter:\n")
 
         # In this loop we are choosing randomly three sentences in the dictionnary sentences
         # and adding them one by one the dictionnary to get for each sentences a key and value
