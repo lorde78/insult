@@ -5,7 +5,9 @@ import random
 # We use he format method for each sentences because it allows us to set  where the selected word will be added
 sentences = [format("{} c’est une bonne personne mais pas du tout"),
              format("demande à ton médecin si {} est bon pour toi"),
-             format("je bois pour oublier {}")]
+             format("je bois pour oublier {}"),
+             format("Une phrase de test {}"),
+             format("Une autre phrase de test {}")]
 
 words = ["une odeur de moule",
          "les vegans",
@@ -36,6 +38,7 @@ def construct(sentences_list, wordlist):
         for i in range(1, 4):
             sentences_choices["{0}".format(i)] = random.choice(sentences)
 
+            
         # Then we display each key and value for the selection of the sentence
         for key, value in sentences_choices.items():
             print(key, "=", value)
