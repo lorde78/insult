@@ -6,9 +6,6 @@ import random
 sentences = [format("{} c’est une bonne personne mais pas du tout"),
              format("demande à ton médecin si {} est bon pour toi"),
              format("je bois pour oublier {}"),
-             format("{} c’est une bonne personne mais pas du tout"),
-             format("demande à ton médecin si {} est bon pour toi"),
-             format("je bois pour oublier {}"),
              format("regarder {} permet de me calmer"),
              format("le cadeau parfait pour une femme qui a déjà tout {}"),
              format("l’Egypte a les pyramides et la France {}"),
@@ -44,8 +41,7 @@ sentences = [format("{} c’est une bonne personne mais pas du tout"),
              format("{} le meilleur livre pour la fête des pères"),
              format("{} le meilleur livre pour la fête des mères"),
              format("{} bon de la première cuillère jusqu’à la dernière goutte"),
-             format("{} c’est triste mais drôle en même temps"),
-             format("{} c’est une bonne personne mais pas du tout")]
+             format("{} c’est triste mais drôle en même temps"),]
 
 words = [format("une odeur de moule"),
         format("les vegans"),
