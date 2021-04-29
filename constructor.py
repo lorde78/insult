@@ -2,7 +2,7 @@
 # !/usr/local/bin/python3
 import random
 
-# We use he format method for each sentences because it allows us to set  where the selected word will be added
+# We use the format method for each sentences because it allows us to set  where the selected word will be added
 sentences = [format("{} c’est une bonne personne mais pas du tout"),
              format("demande à ton médecin si {} est bon pour toi"),
              format("je bois pour oublier {}"),
@@ -174,7 +174,6 @@ def construct(sentences_list, wordlist):
             # Then we display each key and value for the selection of the sentence for the words
             for key, value in word_choices.items():
                     print(key, "=", value)
-                
 
             # Testing the input before getting to the final step
             while True:
