@@ -27,6 +27,8 @@ sentences = [format("{} c’est une bonne personne mais pas du tout"),
              format("mon petit déjeuner préféré, c'est {}")]
 
 
+# Using static methods because there is no init to set up but all the methods belongs to the construct Class
+
 class Constructor:
 
     @staticmethod
