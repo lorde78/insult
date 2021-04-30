@@ -139,17 +139,10 @@ def construct(sentences_list, wordlist):
         # In this loop we are choosing randomly three sentences in the dictionnary sentences
         # and adding them one by one the dictionnary to get for each sentences a key and value
         # that we will use later to pick the sentence to build the final phrase
-<<<<<<< HEAD
-        for i in range(1, 4):
-            sentences_choices["{0}".format(i)] = random.choice(sentences)
-
-            
-=======
         #for i in range(1, 4):
         #    sentences_choices["{0}".format(i)] = random.choice(sentences)
         sentences_choices = random.choice(sentences)
         print(sentences_choices)
->>>>>>> 0935ee83643797823ff776a47f9fe73a7e61e29f
         # Then we display each key and value for the selection of the sentence
         #for key, value in sentences_choices.items():
         #    print(key, "=", value)

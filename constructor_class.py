@@ -88,5 +88,6 @@ class Bot:
         return returned_sentence.format(words.pop(words.index(random.choice(words))))
 
 
-# print(returned_sentence)
-# print(Bot.bot_sentence())
+print(returned_sentence)
+print(Bot.bot_sentence())
+print(Constructor.choose_word(words))
