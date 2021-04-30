@@ -4,9 +4,6 @@ def main():
             self.value = value
             self.suit = suit
 
-        def __repr__(self):
-            return "Card"
-
     class StandardDeck(list):
         def __init__(self):
             super().__init__()
@@ -16,7 +13,7 @@ def main():
 
     deck = StandardDeck()
     for card in deck:
-        print("card", card.value)
+        print(card)
 
 if __name__ == "__main__":
     main()

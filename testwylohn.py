@@ -1,6 +1,7 @@
 # coding: utf-8
 # !/usr/local/bin/python3
 import random
+from points import *
 
 words = ["une odeur de moule",
          "les vegans",
@@ -69,6 +70,44 @@ class Constructor:
                 print("Vous avez choisis le mot: ", word_choices[f'{word_selection}'], "\n")
 
             word = word_choices[f'{word_selection}']
+
+            i = 0
+            alors = "z"
+            while i < len(Pcat1):
+                if Pcat1[i] == returned_sentence:
+                    alors = "a"
+                    i += 1
+            if alors == "z":
+                h = 0
+                while h < len(Pcat2):
+                    if Pcat2[h] == returned_sentence:
+                        alors = "x"
+                        h += 1
+            if alors == "z":
+                c = 0
+                while c < len(Pcat3):
+                    if Pcat3[c] == returned_sentence:
+                        alors = "m"
+                        c += 1
+            print(alors)
+            j = 0
+            donc = "y"
+            while j < len(Mcat1):
+                if Mcat1[j] == mot:
+                    donc = "d"
+                    j += 1
+            if donc == "y":    
+                k = 0
+                while k < len(Mcat2):
+                    if Mcat2[k] == mot:
+                        donc = "e"
+                        k += 1        
+            if donc == "y":
+                l = 0
+                while l < len(Mcat3):
+                    if Mcat3[l] == mot:
+                        donc = "f"
+                        l += 1
 
             return word
 

@@ -6,17 +6,6 @@ import random
 sentences = [format("{} c’est une bonne personne mais pas du tout"),
              format("demande à ton médecin si {} est bon pour toi"),
              format("je bois pour oublier {}"),
-<<<<<<< HEAD
-             format("Une phrase de test {}"),
-             format("Une autre phrase de test {}")]
-
-words = ["une odeur de moule",
-         "les vegans",
-         "nos ancêtres les gaulois",
-         "un cours d’aqua-poney",
-         "un prêtre",
-         "la messe du dimanche"]
-=======
              format("regarder {} permet de me calmer"),
              format("le cadeau parfait pour une femme qui a déjà tout {}"),
              format("l’Egypte a les pyramides et la France {}"),
@@ -118,7 +107,6 @@ words = [format("une odeur de moule"),
         format("tirer la chasse d'eau"),
         format("bernard Tapis"),
         format("20cm de bonheur"),]
->>>>>>> 0935ee83643797823ff776a47f9fe73a7e61e29f
 
 
 def construct(sentences_list, wordlist):
@@ -139,17 +127,10 @@ def construct(sentences_list, wordlist):
         # In this loop we are choosing randomly three sentences in the dictionnary sentences
         # and adding them one by one the dictionnary to get for each sentences a key and value
         # that we will use later to pick the sentence to build the final phrase
-<<<<<<< HEAD
-        for i in range(1, 4):
-            sentences_choices["{0}".format(i)] = random.choice(sentences)
-
-            
-=======
         #for i in range(1, 4):
         #    sentences_choices["{0}".format(i)] = random.choice(sentences)
         sentences_choices = random.choice(sentences)
         print(sentences_choices)
->>>>>>> 0935ee83643797823ff776a47f9fe73a7e61e29f
         # Then we display each key and value for the selection of the sentence
         #for key, value in sentences_choices.items():
         #    print(key, "=", value)
