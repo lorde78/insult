@@ -88,6 +88,5 @@ class Bot:
 
 
 print(returned_sentence)
-
-#print(Bot.bot_sentence())
+print(Bot.bot_sentence())
 print(Constructor.choose_word(words))
