@@ -1,12 +1,31 @@
 # coding: utf-8
 # !/usr/local/bin/python3
 import random
-from words import words
-from sentences import sentences
-from points import Mcat1, Mcat2, Mcat3, Pcat1, Pcat2, Pcat3
+from points import *
+
+words = ["une odeur de moule",
+         "les vegans",
+         "nos ancêtres les gaulois",
+         "un cours d’aqua-poney",
+         "un prêtre",
+         "la messe du dimanche",
+         "hitler",
+         "ma bite",
+         "20cm de bonheur",
+         "les derniers centimètres",
+         "un autiste"]
 
 
-
+sentences = [format("{} c’est une bonne personne mais pas du tout"),
+             format("demande à ton médecin si {} est bon pour toi"),
+             format("je bois pour oublier {}"),
+             format("regarder {} permet de me calmer"),
+             format("le cadeau parfait pour une femme qui a déjà tout {}"),
+             format("l’Egypte a les pyramides et la France {}"),
+             format("didier Raoult a inventé {} contre le coronavirus"),
+             format("{}, ça fond dans la bouche, pas dans la main"),
+             format("{}, c'est encore meilleur la 2ème fois"),
+             format("mon petit déjeuner préféré, c'est {}")]
 
 
 # Using static methods because there is no init to set up but all the methods belongs to the construct Class
@@ -43,7 +62,7 @@ class Constructor:
 
             except AssertionError:
 
-                print("Vous n'avez pas saisi une valeur entre 1 et 5")
+                print("Vous n'avez pas saisi une valeur entre 1 et 3")
                 continue
 
             else:
@@ -57,39 +76,39 @@ class Constructor:
             while i < len(Pcat1):
                 if Pcat1[i] == returned_sentence:
                     alors = "a"
-                i += 1
+                    i += 1
             if alors == "z":
-                j = 0
-                while j < len(Pcat2):
-                    if Pcat2[j] == returned_sentence:
-                        alors = "b"
-                    j += 1
+                h = 0
+                while h < len(Pcat2):
+                    if Pcat2[h] == returned_sentence:
+                        alors = "x"
+                        h += 1
             if alors == "z":
-                k = 0
-                while k < len(Pcat3):
-                    if Pcat3[k] == returned_sentence:
-                        alors = "c"
-                    k += 1
+                c = 0
+                while c < len(Pcat3):
+                    if Pcat3[c] == returned_sentence:
+                        alors = "m"
+                        c += 1
             print(alors)
-            l = 0
+            j = 0
             donc = "y"
-            while l < len(Mcat1):
-                if Mcat1[l] == word:
+            while j < len(Mcat1):
+                if Mcat1[j] == mot:
                     donc = "d"
-                l += 1
+                    j += 1
             if donc == "y":    
-                m = 0
-                while m < len(Mcat2):
-                    if Mcat2[m] == word:
-                        donc == "e"
-                    m += 1        
+                k = 0
+                while k < len(Mcat2):
+                    if Mcat2[k] == mot:
+                        donc = "e"
+                        k += 1        
             if donc == "y":
-                n = 0
-                while n < len(Mcat3):
-                    if Mcat3[n] == word:
+                l = 0
+                while l < len(Mcat3):
+                    if Mcat3[l] == mot:
                         donc = "f"
-                    n += 1
-            print(donc)
+                        l += 1
+
             return word
 
     @staticmethod
@@ -108,5 +127,6 @@ class Bot:
 
 
 print(returned_sentence)
-print(Bot.bot_sentence())
+
+#print(Bot.bot_sentence())
 print(Constructor.choose_word(words))

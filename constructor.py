@@ -6,17 +6,6 @@ import random
 sentences = [format("{} c’est une bonne personne mais pas du tout"),
              format("demande à ton médecin si {} est bon pour toi"),
              format("je bois pour oublier {}"),
-<<<<<<< HEAD
-             format("Une phrase de test {}"),
-             format("Une autre phrase de test {}")]
-
-words = ["une odeur de moule",
-         "les vegans",
-         "nos ancêtres les gaulois",
-         "un cours d’aqua-poney",
-         "un prêtre",
-         "la messe du dimanche"]
-=======
              format("regarder {} permet de me calmer"),
              format("le cadeau parfait pour une femme qui a déjà tout {}"),
              format("l’Egypte a les pyramides et la France {}"),
@@ -118,7 +107,6 @@ words = [format("une odeur de moule"),
         format("tirer la chasse d'eau"),
         format("bernard Tapis"),
         format("20cm de bonheur"),]
->>>>>>> 0935ee83643797823ff776a47f9fe73a7e61e29f
 
 
 def construct(sentences_list, wordlist):
