@@ -4,7 +4,7 @@ words = [
     "nos ancêtres les gaulois",
     "un cours d’aqua-poney",
     "un prêtre",
-    "la messe du dimanche"
+    "la messe du dimanche",
     "Hitler",
     "Ma bite",
     "20cm de bonheur",
