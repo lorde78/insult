@@ -3,68 +3,68 @@
 
 points = {
     "Hitler" : 10,
-    "Ma bite" : 5,
+    "ma bite" : 5,
     "20cm de bonheur" : 15,
-    "Les derniers centimètres" : 10,
-    "Un autiste" : 10,
-    "Faire l'hélicoptère devant sa mère" : 20,
+    "les derniers centimètres" : 10,
+    "un autiste" : 10,
+    "faire l'hélicoptère devant sa mère" : 20,
     "Maitre Gims" : 25,
-    "Une vegan qui se demande si elle peut avaler" : 15,
-    "Recoucher avec son ex" : 10,
-    "Jouir en 30s et s'en taper" : 10,
-    "L'haleine du prof de maths" : 25,
-    "Une sodomie surprise" : 10,
-    "Traire une femme qui allaite" : 20,
-    "Des testicules trop pleines" : 10,
-    "Un kebab de pangolin" : 30,
-    "Ouvrir un compte en Suisse" : 25,
-    "Un cancer de la prostate" : 10,
-    "Mon ex" : 30,
+    "une vegan qui se demande si elle peut avaler" : 15,
+    "recoucher avec son ex" : 10,
+    "jouir en 30s et s'en taper" : 10,
+    "l'haleine du prof de maths" : 25,
+    "une sodomie surprise" : 10,
+    "traire une femme qui allaite" : 20,
+    "des testicules trop pleines" : 10,
+    "un kebab de pangolin" : 30,
+    "ouvrir un compte en Suisse" : 25,
+    "un cancer de la prostate" : 10,
+    "mon ex" : 30,
     "300 matelots en rut après 6 mois en haute mer" : 20,
     "Jean-Yves le Drian" : 20,
-    "L'oeil de verre de Jean Marie le Pen" : 25,
-    "Un camembert bien coulant" : 30,
+    "l'oeil de verre de Jean Marie le Pen" : 25,
+    "un camembert bien coulant" : 30,
     "Brontis" : 35,
-    "Une pièce, une cigarette ou un ticket restaurant" : 30,
-    "La coulante" : 15,
-    "Les longues caresses de papy" : 15,
-    "Un long bain de minuit" : 25,
-    "La sortie d'école" : 15,
+    "une pièce, une cigarette ou un ticket restaurant" : 30,
+    "la coulante" : 15,
+    "les longues caresses de papy" : 15,
+    "un long bain de minuit" : 25,
+    "la sortie d'école" : 15,
     "Ebola" : 10,
-    "Une mutation à Auxerre" : 20,
-    "L'hygiène bucco-dentaire" : 20,
-    "Pisser face au vent" : 30,
-    "La tribu de Dana" : 25,
+    "une mutation à Auxerre" : 20,
+    "l'hygiène bucco-dentaire" : 20,
+    "pisser face au vent" : 30,
+    "la tribu de Dana" : 25,
     "1.5L de coca" : 15,
-    "Une odeur de moule" : 15,
-    "Les vegans" : 15,
-    "Nos ancêtres les Gaulois" : 20,
-    "Un cours d'aqua-poney" : 15,
-    "Un prêtre" : 15,
-    "La messe du dimanche" : 20,
-    "Une sonde anale" : 15,
-    "Mon kiné" : 20,
-    "Un cactus dans le salon" : 15,
-    "Laisser ses chaussettes sécher à la fenêtre" : 20,
-    "Un repas de famille avec ton oncle raciste" : 15,
-    "Le coming-out de mon frère" : 25,
-    "Le chien de la voisine" : 25,
-    "Les Roms" : 15,
-    "Une partouze masquée avec François Hollande" : 10,
+    "une odeur de moule" : 15,
+    "les vegans" : 15,
+    "nos ancêtres les Gaulois" : 20,
+    "un cours d'aqua-poney" : 15,
+    "un prêtre" : 15,
+    "la messe du dimanche" : 20,
+    "une sonde anale" : 15,
+    "mon kiné" : 20,
+    "un cactus dans le salon" : 15,
+    "laisser ses chaussettes sécher à la fenêtre" : 20,
+    "un repas de famille avec ton oncle raciste" : 15,
+    "le coming-out de mon frère" : 25,
+    "le chien de la voisine" : 25,
+    "les Roms" : 15,
+    "une partouze masquée avec François Hollande" : 10,
     "Pierre ménès que a la gastro" : 15,
-    "Des dreads sous les aisselles" : 10,
-    "Jouer à cache-cache contre Nordhal Lelandais" : 20,
-    "Regarder Games of Thrones" : 15,
-    "Les aventures de Winnie l'Ourson" : 25,
-    "Compter jusqu'à 3 avec Franklin" : 20,
-    "Souffler dans la chicha" : 15,
-    "Les fantômes" : 15,
-    "Tirer la chasse d'eau" : 10,
+    "des dreads sous les aisselles" : 10,
+    "jouer à cache-cache contre Nordhal Lelandais" : 20,
+    "regarder Games of Thrones" : 15,
+    "les aventures de Winnie l'Ourson" : 25,
+    "compter jusqu'à 3 avec Franklin" : 20,
+    "souffler dans la chicha" : 15,
+    "les fantômes" : 15,
+    "tirer la chasse d'eau" : 10,
     "Bernard Tapis" : 15,
     "HETIC" : 35,
 }
 
-
+# Cat 1 Sujet
 Mcat1 = ["une odeur de moule",
     "les vegans", 
     "nos ancêtres les gaulois", 
@@ -104,7 +104,7 @@ Mcat1 = ["une odeur de moule",
     "HETIC"]
 
 
-# Cat 2 : COD/COI JAUNE 3pts Mais Bleu 2pts
+# Cat 2 : COD/COI
 Mcat2 = ["Jouer à cache-cache contre Nordhal Lelandais",
 "Faire l'hélicoptère devant sa mère",
 "Regarder Games of Thrones",
@@ -118,7 +118,7 @@ Mcat2 = ["Jouer à cache-cache contre Nordhal Lelandais",
 "Compter jusqu'à 3 avec Franklin",
 "Ouvrir un compte en Suisse"]
 
-# Cat 3 : passe partout mechant Bleu 3 pts ou Jaune 2 pts
+# Cat 3 : passe partout mechant
 Mcat3 = ["Hitler",
 "Ma bite",
 "20 cm de bonheur",
@@ -137,7 +137,7 @@ Mcat3 = ["Hitler",
 
 # Catégories phrases :
 
-# Cat 1 : passepartout MARRON
+# Cat 1 : Sujet
 Pcat1 = [format("{} c’est une bonne personne mais pas du tout"),
 format("{} me scotch aux lunettes de toilette"),
 format("Scandale à Roubaix un professeur montre {} à ses élèves"),
@@ -153,7 +153,7 @@ format("{}, c'est encore meilleur la 2ème fois"),
 format("Le 7ème jour Dieu créa {}"),
 format("{} ça a l'air marrant, mais en fait ça fait mal")]
 
-# Cat 2 : COD JAUNE
+# Cat 2 : COD
 Pcat2= [format("{} le meilleur livre pour la fête des pères"),
 format("{} le meilleur livre pour la fête des mères"),
 format("{} me scotch aux lunettes de toilette"),
@@ -163,7 +163,7 @@ format("{} ça a l'air marrant, mais en fait ça fait mal"),
 format("{}, rien de mieux pour briser la glace"),
 format("{} C’est tout ce que je demande")]
 
-# Cat 3 : passepartout mechant BLEU
+# Cat 3 : TOUT
 Pcat3 = [format("Quand j’étais petit, les autres voulaient être pompier, moi ce que je voulais c’est {}"),
 format("{} c’est triste mais drôle en même temps"),
 format("{} bon de la première cuillère jusqu’à la dernière goutte"),
@@ -182,3 +182,4 @@ format("{} c'est tellement ton père !"),
 format("entre {} et une vie de famille, il faut choisir")]
 
 
+print(points["Hitler"])

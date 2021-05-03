@@ -3,7 +3,7 @@
 import random
 from words import words
 from sentences import sentences
-from points import Mcat1, Mcat2, Mcat3, Pcat1, Pcat2, Pcat3
+from points import Mcat1, Mcat2, Mcat3, Pcat1, Pcat2, Pcat3, points
 
 
 
@@ -90,6 +90,22 @@ class Constructor:
                         donc = "f"
                     n += 1
             print(donc)
+
+            valuable = 0
+            score = valuable + points[word]
+            if alors == "a" and donc == "d":
+                score*2
+            if alors == "a" and donc == "f":
+                score*1.5
+            elif alors == "b" and donc == "e":
+                score*2
+            elif alors == "c" and donc == "e":
+                score*2
+            elif alors == "c" and donc == "d":
+                score*1.5
+            elif alors == "c" and donc == "f":
+                score*1.5
+            print(score)
             return word
 
     @staticmethod
