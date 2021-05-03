@@ -95,7 +95,7 @@ class Constructor:
             score = valuable + points[word]
             if alors == "a" and donc == "d":
                 score = score*2
-            if alors == "a" and donc == "f":
+            elif alors == "a" and donc == "f":
                 score = score*1.5
             elif alors == "b" and donc == "e":
                 score = score*2
