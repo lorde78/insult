@@ -94,17 +94,17 @@ class Constructor:
             valuable = 0
             score = valuable + points[word]
             if alors == "a" and donc == "d":
-                score*2
+                score = score*2
             if alors == "a" and donc == "f":
-                score*1.5
+                score = score*1.5
             elif alors == "b" and donc == "e":
-                score*2
+                score = score*2
             elif alors == "c" and donc == "e":
-                score*2
+                score = score*2
             elif alors == "c" and donc == "d":
-                score*1.5
+                score = score*1.5
             elif alors == "c" and donc == "f":
-                score*1.5
+                score = score*1.5
             print(score)
             return word
 
