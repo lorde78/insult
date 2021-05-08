@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import os
+from constructor_class import Bot, Constructor
+from sentences import sentences
+from words import words
 path = os.getcwd() ### Pour les images les chemins
 
-degrade ='''qradialgradient(
+degrade = '''qradialgradient(
         radius:3,
         stop:0 rgb(255, 119, 55), 
         stop:0.3 rgb(255, 48, 108),
@@ -202,11 +205,11 @@ class Ui_SoloGame(object):
         self.label.setIndent(0)
         self.label.setObjectName("label")
         self._sur10_2 = QtWidgets.QFrame(SoloGame)
-        self._sur10_2.setGeometry(QtCore.QRect(94, 390, 191, 33))
+        self._sur10_2.setGeometry(QtCore.QRect(30, 100, 300, 100))
         self._sur10_2.setStyleSheet("QFrame{background-color: "+degrade+";""border: 4px solid white; border-radius: 16px;}")
         self._sur10_2.setObjectName("_sur10_2")
         self.label_2 = QtWidgets.QLabel(self._sur10_2)
-        self.label_2.setGeometry(QtCore.QRect(30, 5, 141, 21))
+        self.label_2.setGeometry(QtCore.QRect(20, 20, 300, 42))
         font = QtGui.QFont()
         font.setFamily("Reem Kufi")
         font.setPointSize(-1)
@@ -249,12 +252,14 @@ class Ui_SoloGame(object):
         SoloGame.setWindowTitle(_translate("SoloGame", "Form"))
         self.nameAge.setText(_translate("SoloGame", "Lucie, 20"))
         self.home.setText(_translate("SoloGame", "Home"))
-        self.label_4.setText(_translate("SoloGame", "Lorem ipsum dolor sit amet"))
-        self.label_5.setText(_translate("SoloGame", "Lorem ipsum dolor sit amet"))
-        self.label_6.setText(_translate("SoloGame", "Lorem ipsum dolor sit amet"))
-        self.label_8.setText(_translate("SoloGame", "Lorem ipsum dolor sit amet"))
+        self.label_4.setText(_translate("SoloGame", Constructor.test_choose_word(words)))
+        self.label_5.setText(_translate("SoloGame", Constructor.test_choose_word(words)))
+        self.label_6.setText(_translate("SoloGame", Constructor.test_choose_word(words)))
+        self.label_8.setText(_translate("SoloGame", Constructor.test_choose_word(words)))
         self.label.setText(_translate("SoloGame", "1/10"))
-        self.label_2.setText(_translate("SoloGame", "Tu es la plus belle__"))
+        self.label_2.setText(_translate("SoloGame", Constructor.random_sentence(sentences)))
+
+
 
 
 if __name__ == "__main__":

@@ -35,3 +35,4 @@ sentences = [format("{} c’est une bonne personne mais pas du tout"),
              format("{} bon de la première cuillère jusqu’à la dernière goutte"),
              format("{} c’est triste mais drôle en même temps"),
 ]
+
