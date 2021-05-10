@@ -165,6 +165,5 @@ class SoloGame:
 
         self.show()
 
-        def 
 
 
