@@ -49,26 +49,26 @@ class Constructor:
             else:
                 # Choosen word will be fetch in the word_choices{} with the selected input
                 print("Vous avez choisis le mot: ", word_choices[f'{word_selection}'], "\n")
-                
+
             word = word_choices[f'{word_selection}']
             constructed_sentence = str(sentence.format(word).capitalize())
 
             i = 0
             alors = "z"
             while i < len(Pcat1):
-                if Pcat1[i] == returned_sentence:
+                if Pcat1[i] == sentence:
                     alors = "a"
                 i += 1
             if alors == "z":
                 j = 0
                 while j < len(Pcat2):
-                    if Pcat2[j] == returned_sentence:
+                    if Pcat2[j] == sentence:
                         alors = "b"
                     j += 1
             if alors == "z":
                 k = 0
                 while k < len(Pcat3):
-                    if Pcat3[k] == returned_sentence:
+                    if Pcat3[k] == sentence:
                         alors = "c"
                     k += 1
             print(alors)
@@ -78,12 +78,12 @@ class Constructor:
                 if Mcat1[l] == word:
                     donc = "d"
                 l += 1
-            if donc == "y":    
+            if donc == "y":
                 m = 0
                 while m < len(Mcat2):
                     if Mcat2[m] == word:
                         donc == "e"
-                    m += 1        
+                    m += 1
             if donc == "y":
                 n = 0
                 while n < len(Mcat3):
@@ -107,7 +107,7 @@ class Constructor:
             elif alors == "c" and donc == "f":
                 score = score*1.5
             print(score)
-            return word, constructed_sentence
+            return constructed_sentence
 
     @staticmethod
     def random_sentence(sentences_list):
@@ -123,13 +123,13 @@ class Bot:
 
     @staticmethod
     def bot_sentence():
-        return returned_sentence.format(words.pop(words.index(random.choice(words))))
+        return sentence.format(words.pop(words.index(random.choice(words))))
 
-returned_sentence = (Constructor.random_sentence(sentences))
+# returned_sentence = (Constructor.random_sentence(sentences))
 returned_word = (Constructor.test_choose_word(words))
 sentence = (Constructor.random_sentence(sentences))
 
-print(returned_sentence)
+print(sentence)
 #print(Bot.bot_sentence())
 #print(Constructor.random_sentence(sentences).format(Constructor.test_choose_word(words)))
 print(Constructor.choose_word(Constructor.test_choose_word(words)))
