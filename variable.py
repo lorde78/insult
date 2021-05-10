@@ -1,4 +1,3 @@
-
 import os
 ### Couleurs :
 degrade ='''qradialgradient(
