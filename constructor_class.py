@@ -14,7 +14,7 @@ from points import Mcat1, Mcat2, Mcat3, Pcat1, Pcat2, Pcat3, points
 class Constructor:
 
     @staticmethod
-    def choose_word(wordlist, word, constructed_sentence):
+    def choose_word(wordlist):
 
         word_choices = {}
 
@@ -51,7 +51,7 @@ class Constructor:
                 print("Vous avez choisis le mot: ", word_choices[f'{word_selection}'], "\n")
                 
             word = word_choices[f'{word_selection}']
-            constructed_sentence = str(sentences.format(word).capitalize())
+            constructed_sentence = str(sentence.format(word).capitalize())
 
             i = 0
             alors = "z"
@@ -107,7 +107,6 @@ class Constructor:
             elif alors == "c" and donc == "f":
                 score = score*1.5
             print(score)
-            
             return word, constructed_sentence
 
     @staticmethod
@@ -126,15 +125,12 @@ class Bot:
     def bot_sentence():
         return returned_sentence.format(words.pop(words.index(random.choice(words))))
 
-
 returned_sentence = (Constructor.random_sentence(sentences))
-#returned_word = (Constructor.test_choose_word(words))
+returned_word = (Constructor.test_choose_word(words))
 sentence = (Constructor.random_sentence(sentences))
 
 print(returned_sentence)
-#print(returned_word)
-print(str(sentences.format(word).capitalize()))
-print(Bot.bot_sentence())
+#print(Bot.bot_sentence())
 #print(Constructor.random_sentence(sentences).format(Constructor.test_choose_word(words)))
-#print(Constructor.choose_word(Constructor.test_choose_word(words)))
+print(Constructor.choose_word(Constructor.test_choose_word(words)))
 #print(sentence.format(Constructor.test_choose_word(words)))
