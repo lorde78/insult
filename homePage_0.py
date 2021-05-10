@@ -7,7 +7,7 @@ import variable as var
     
 class HomePage():
     
-    def HomePage_init (self):
+    def __init__ (self):
         self.setStyleSheet("background-color: white")
         self.verticalLayoutWidget = QtWidgets.QWidget(self)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(50, 310, 267, 191))
@@ -80,9 +80,7 @@ from Mwindow import MWindow
 window = MWindow()
 
 def PressedButtonSolo():
-
-    print("Click Boutton SOLO")
-    AskingNamePage.HomePage_init(window)
+    AskingNamePage.__init__(window)
     
 
 

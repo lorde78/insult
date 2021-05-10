@@ -1,17 +1,17 @@
-# -*- coding: utf-8 -*-
+
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import * 
 from PyQt5.QtGui import *
-from PyQt5.QtCore import QTimer
 import variable as var
-import sys
+import askingName_0
 
 class SoloGame:
 
-    def SoloGames(self):
+    def __init__(self):
 
+#HEADER###############################
         self.Header = QtWidgets.QFrame(self)
         self.Header.setGeometry(QtCore.QRect(-1, -40, 362, 110))
         self.Header.setStyleSheet("QFrame{background-color: white; border: 1px solid "+var.degrade+"; border-radius: 10px;}")
@@ -32,13 +32,14 @@ class SoloGame:
         self.online.setFrameShadow(QtWidgets.QFrame.Raised)
 
 
-        self.nameAge = QtWidgets.QLabel(self.Header)
-        self.nameAge.setGeometry(QtCore.QRect(80, 70, 110, 16))
-        self.nameAge.setStyleSheet("font-weight: bold;font-size: 14px;line-height: 21px;color:blue;border:0px;")
-        self.nameAge.setTextFormat(QtCore.Qt.AutoText)
-        self.nameAge.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
-        self.nameAge.setText("Name ennemy")
+        self.nameEnnemy = QtWidgets.QLabel(self.Header)
+        self.nameEnnemy.setGeometry(QtCore.QRect(80, 70, 110, 16))
+        self.nameEnnemy.setStyleSheet("font-weight: bold;font-size: 14px;line-height: 21px;color:blue;border:0px;")
+        self.nameEnnemy.setTextFormat(QtCore.Qt.AutoText)
+        self.nameEnnemy.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
+        self.nameEnnemy.setText("Name ennemy")
 
+        #HOME BUTTON
         self.pushButton = QtWidgets.QPushButton(self.Header)
         self.pushButton.setGeometry(QtCore.QRect(260, 60, 81, 31))
         self.pushButton.setStyleSheet("font-weight: normal;font-size: 14px;line-height: 21px;color:blue;border:0px;")
@@ -47,8 +48,10 @@ class SoloGame:
         self.pushButton.setIcon(icon)
         self.pushButton.setAutoDefault(False)
         self.pushButton.setText(" Home")
+        self.pushButton.clicked.connect(askingName_0.ReturnHome)
+        self.pushButton.clicked.connect(self.close)
 
-        ################################################################
+#PARTIE INF###############################################################
 
         self.panneauInf = QtWidgets.QFrame(self)
         self.panneauInf.setGeometry(QtCore.QRect(0, 410, 360, 230))
@@ -92,13 +95,13 @@ class SoloGame:
         self.verticalLayoutWidget = QtWidgets.QWidget(self)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(19, 130, 321, 251))
 
-################################################################
+#MESSAGERIE###############################################################
 
         self.layout_messagerie = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.layout_messagerie.setContentsMargins(0, 0, 0, 0)
         self.layout_messagerie.setObjectName("layout_messagerie")
 
-################################################################
+#PHRASE A COMPLETER###############################################################
 
         self.Sentence_ = QtWidgets.QLabel(self)
         self.Sentence_.setGeometry(QtCore.QRect(80, 70, 221, 51))
@@ -115,7 +118,7 @@ class SoloGame:
         self.picBot.setAlignment(QtCore.Qt.AlignCenter)
         self.picBot.setObjectName("picBot")
 
-################################################################
+#POINTS / USERNAME###############################################################
         self.pointEnemy = QtWidgets.QProgressBar(self)
         self.pointEnemy.setGeometry(QtCore.QRect(90, 400, 70, 20))
         self.pointEnemy.setStyleSheet(var.stylePointGame)
@@ -140,18 +143,16 @@ class SoloGame:
         self.UserName.setFont(font)
         self.UserName.setStyleSheet("background:white;color:blue;border: 1px solid "+var.degrade+";border-radius:13px;font-weight: semi-bold")
         self.UserName.setAlignment(QtCore.Qt.AlignCenter)
-        self.UserName.setText(var.UserName)
+        self.UserName.setText(askingName_0.Username)
 
-
-
+#LOGO###########
         self.titreLogo_transp = QtWidgets.QLabel(self)
         self.titreLogo_transp.setGeometry(QtCore.QRect(20, 180, 319, 149))
         self.titreLogo_transp.setStyleSheet("background: transparent;")
         self.titreLogo_transp.setPixmap(QtGui.QPixmap(var.path+"/images/LOGO/trans.png"))
         self.titreLogo_transp.setAlignment(QtCore.Qt.AlignCenter)
-
+############
         self.show()
-
 
 
 

@@ -12,5 +12,4 @@ from loadPage_0 import loadPage
 loadPage.LoadPage(window)
 
 
-# window.show()
 sys.exit(app.exec_())

@@ -50,7 +50,7 @@ class ProgressBar(QProgressBar):
 
     def __init__(self, windowloading, *args, **kwargs):
         super(ProgressBar, self).__init__(*args, **kwargs)
-        print(self.timeEnd)
+        #print(self.timeEnd)
         self.setValue(0)
         if self.minimum() != self.maximum():
             self.timer = QTimer(self, timeout = self.onTimeout)
@@ -63,9 +63,9 @@ class ProgressBar(QProgressBar):
         if self.value() >= self.maximum() :
             self.timer.stop()
             self.timeEnd = True
-            print(self.timeEnd)
+            #print(self.timeEnd)
             self.windowloading.close()
-            HomePage.HomePage_init(window)
+            HomePage.__init__(window)
             
            
             
