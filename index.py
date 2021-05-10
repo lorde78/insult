@@ -1,5 +1,6 @@
 ## Imports
 import sys
+sys.path.insert(0,"interface")
 from PyQt5.QtWidgets import * 
 
 #initiallize GUI application
