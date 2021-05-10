@@ -120,6 +120,16 @@ class SoloGame:
         self.random_phrase = Constructor.random_sentence(sentences)
         self.Sentence_.setText(self.random_phrase)
 
+        # def showSurface(): ajoute un carré de discussion, montre la phrase avec le mot selectionnée en dessous de la premiere phrase de bot
+
+        #         self.Sentence2_ = QtWidgets.QLabel(self)
+        #         self.Sentence2_.setGeometry(QtCore.QRect(80, 70, 230, 80))
+        #         self.Sentence2_.setAutoFillBackground(False)
+        #         self.Sentence2_.setStyleSheet("background-color: "+var.degrade+"; border: 4px solid white; border-radius: 16px;color: white;")
+        #         self.Sentence2_.setAlignment(QtCore.Qt.AlignCenter)
+        #         self.random_phrase = Constructor.random_sentence(sentences)
+        #         self.Sentence_.setText(self.random_phrase)
+
         self.picBot = QtWidgets.QLabel(self)
         self.picBot.setGeometry(QtCore.QRect(30, 70, 51, 51))
         self.picBot.setStyleSheet("background:transparent;")
