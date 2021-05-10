@@ -13,7 +13,8 @@ from words import words
 class SoloGame:
 
     def __init__(self):
-
+        self.random_phrase = None
+        self.words = []
 #HEADER###############################
         self.Header = QtWidgets.QFrame(self)
         self.Header.setGeometry(QtCore.QRect(-1, -40, 362, 110))
@@ -81,10 +82,12 @@ class SoloGame:
                         self.proposition.setSizeIncrement(QtCore.QSize(0, 0))
                         self.proposition.setBaseSize(QtCore.QSize(0, 0))
                         self.proposition.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-                        self.proposition.setText(Constructor.test_choose_word(words))
+                        word = Constructor.test_choose_word(words)
+                        self.words.append(word)
+                        self.proposition.setText(word)
                         self.proposition.setAutoDefault(False)
-                        self.proposition.clicked.connect(phraseComplete)
-                        #self.proposition.clicked.connect(self.close)
+                        self.proposition.clicked.connect(askingName_0.ReturnHome)
+                        self.proposition.clicked.connect(self.close)
                         
                         self.layoutPropositions.addWidget(self.proposition)
                         i+=1
@@ -114,7 +117,8 @@ class SoloGame:
         self.Sentence_.setAutoFillBackground(False)
         self.Sentence_.setStyleSheet("background-color: "+var.degrade+"; border: 4px solid white; border-radius: 16px;color: white;")
         self.Sentence_.setAlignment(QtCore.Qt.AlignCenter)
-        self.Sentence_.setText(Constructor.random_sentence(sentences))
+        self.random_phrase = Constructor.random_sentence(sentences)
+        self.Sentence_.setText(random_phrase)
 
         self.picBot = QtWidgets.QLabel(self)
         self.picBot.setGeometry(QtCore.QRect(30, 70, 51, 51))
@@ -158,9 +162,9 @@ class SoloGame:
         self.titreLogo_transp.setPixmap(QtGui.QPixmap(var.path+"/images/LOGO/trans.png"))
         self.titreLogo_transp.setAlignment(QtCore.Qt.AlignCenter)
 ############
+
         self.show()
 
+        def 
 
-def phraseComplete(self):
-        print(Constructor.random_sentence(sentences))
 
