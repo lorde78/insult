@@ -1,4 +1,6 @@
 #coding:utf-8
+import sys
+sys.path.insert(0,"interface")
 from PyQt5 import QtGui
 import os
 from PyQt5.QtWidgets import * 
