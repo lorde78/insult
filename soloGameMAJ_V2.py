@@ -6,6 +6,9 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 import variable as var
 import askingName_0
+from constructor_class import Bot, Constructor
+from sentences import sentences
+from words import words
 
 class SoloGame:
 
@@ -67,9 +70,9 @@ class SoloGame:
         self.layoutPropositions.setContentsMargins(0, 0, 0, 0)
         self.layoutPropositions.setSpacing(0)
         self.verticalLayoutWidget_2.setStyleSheet("Background:transparent")
-
+        
         def Propositions(self):
-                propositions = 5
+                propositions = 4
                 i = 0
                 while i < propositions:
                         self.proposition = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
@@ -78,7 +81,10 @@ class SoloGame:
                         self.proposition.setSizeIncrement(QtCore.QSize(0, 0))
                         self.proposition.setBaseSize(QtCore.QSize(0, 0))
                         self.proposition.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-                        self.proposition.setText("Hello World!")
+                        self.proposition.setText(Constructor.test_choose_word(words))
+                        self.proposition.setAutoDefault(False)
+                        self.proposition.clicked.connect(phraseComplete)
+                        #self.proposition.clicked.connect(self.close)
                         
                         self.layoutPropositions.addWidget(self.proposition)
                         i+=1
@@ -104,11 +110,11 @@ class SoloGame:
 #PHRASE A COMPLETER###############################################################
 
         self.Sentence_ = QtWidgets.QLabel(self)
-        self.Sentence_.setGeometry(QtCore.QRect(80, 70, 221, 51))
+        self.Sentence_.setGeometry(QtCore.QRect(80, 70, 230, 80))
         self.Sentence_.setAutoFillBackground(False)
         self.Sentence_.setStyleSheet("background-color: "+var.degrade+"; border: 4px solid white; border-radius: 16px;color: white;")
         self.Sentence_.setAlignment(QtCore.Qt.AlignCenter)
-        self.Sentence_.setText(var.sentenceHole)
+        self.Sentence_.setText(Constructor.random_sentence(sentences))
 
         self.picBot = QtWidgets.QLabel(self)
         self.picBot.setGeometry(QtCore.QRect(30, 70, 51, 51))
@@ -155,5 +161,6 @@ class SoloGame:
         self.show()
 
 
-
+def phraseComplete(self):
+        print(Constructor.random_sentence(sentences))
 

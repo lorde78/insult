@@ -182,4 +182,3 @@ format("{} c'est tellement ton père !"),
 format("entre {} et une vie de famille, il faut choisir")]
 
 
-print(points["Hitler"])
