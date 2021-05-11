@@ -1,9 +1,9 @@
-from askingName_0 import AskingNamePage
+from _askingName_0 import AskingNamePage
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
     ##Variables
-import variable as var
+import _variable as var
     
 class HomePage():
     
@@ -19,6 +19,7 @@ class HomePage():
         self.layout_frame1.setSpacing(0)
         self.layout_frame1.setObjectName("layout_frame1")
 
+#SOLO#########
         self.pushButtonSolo = QtWidgets.QPushButton(self.verticalLayoutWidget)
         self.pushButtonSolo.setMinimumSize(QtCore.QSize(0, 30))
         self.pushButtonSolo.setLayoutDirection(QtCore.Qt.LeftToRight)
@@ -29,6 +30,7 @@ class HomePage():
 
         self.layout_frame1.addWidget(self.pushButtonSolo)
 
+#MULTI#########
         self.pushButtonMulti = QtWidgets.QPushButton(self.verticalLayoutWidget)
         self.pushButtonMulti.setMinimumSize(QtCore.QSize(0, 30))
         self.pushButtonMulti.setLayoutDirection(QtCore.Qt.LeftToRight)
@@ -37,6 +39,7 @@ class HomePage():
 
         self.layout_frame1.addWidget(self.pushButtonMulti)
 
+#About#########
         self.pushButtonAbout = QtWidgets.QPushButton(self.verticalLayoutWidget)
         self.pushButtonAbout.setMinimumSize(QtCore.QSize(0, 30))
         self.pushButtonAbout.setLayoutDirection(QtCore.Qt.LeftToRight)
@@ -45,9 +48,9 @@ class HomePage():
 
         self.layout_frame1.addWidget(self.pushButtonAbout)
 
+#LOGO TITRE#########
         self.logoEmpty = QtWidgets.QLabel(self)
         self.logoEmpty.setGeometry(QtCore.QRect(100, 80, 171, 161))
-        self.logoEmpty.setText("")
         self.logoEmpty.setPixmap(QtGui.QPixmap(var.path+"/images/LOGO/logo-empty.png"))
         self.logoEmpty.setScaledContents(False)
         self.logoEmpty.setAlignment(QtCore.Qt.AlignCenter)
@@ -55,11 +58,11 @@ class HomePage():
 
         self.titreCDungo = QtWidgets.QLabel(self)
         self.titreCDungo.setGeometry(QtCore.QRect(50, 230, 265, 51))
-        self.titreCDungo.setText("")
         self.titreCDungo.setPixmap(QtGui.QPixmap(var.path+"/images/LOGO/Cannibale_Dungo.png"))
         self.titreCDungo.setAlignment(QtCore.Qt.AlignCenter)
         self.titreCDungo.setObjectName("titreCDungo")
 
+#Bubbles#########
         self.bubbleLeft = QtWidgets.QLabel(self)
         self.bubbleLeft.setGeometry(QtCore.QRect(-20, 500, 141, 141))
         self.bubbleLeft.setPixmap(QtGui.QPixmap(var.path+"/images/Autre/bubble-1.png"))
@@ -72,11 +75,12 @@ class HomePage():
         self.bubbleRight.setGeometry(QtCore.QRect(290, -20, 111, 171))
         self.bubbleRight.setPixmap(QtGui.QPixmap(var.path+"/images/Autre/bubble-2.png"))
         self.bubbleRight.setObjectName("bubbleRight")
+##########
 
         self.show()
 
-from askingName_0 import *
-from Mwindow import MWindow
+from _askingName_0 import *
+from _Mwindow import MWindow
 window = MWindow()
 
 def PressedButtonSolo():

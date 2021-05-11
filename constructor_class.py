@@ -9,6 +9,7 @@ from points import Mcat1, Mcat2, Mcat3, Pcat1, Pcat2, Pcat3, points
 
 
 
+
 # Using static methods because there is no init to set up but all the methods belongs to the construct Class
 
 class Constructor:
@@ -18,16 +19,7 @@ class Constructor:
 
         word_choices = {}
 
-        #print("Choisissez maintenant un mot à placer dans la phrase")
-
-        # Same proccess here to select the word
-        for i in range(1, 6):
-            word_choices["{0}".format(i)] = words.pop(words.index(random.choice(words)))
-
-        # Then we display each key and value for the selection of the sentence for the words
-        for key, value in word_choices.items():
-            print(key, "=", value)
-
+       
         # Testing the input before getting to the final step
         while True:
                 # Input to select the sentence
@@ -106,7 +98,7 @@ class Constructor:
             elif alors == "c" and donc == "f":
                 score = score*1.5
             print(score)
-            return word, constructed_sentence
+            return constructed_sentence
 
     @staticmethod
     def random_sentence(sentences_list):
@@ -115,7 +107,7 @@ class Constructor:
 
     @staticmethod
     def test_choose_word(wordlist):
-        returned_word = words.pop(words.index(random.choice(words)))
+        returned_word = wordlist.pop(wordlist.index(random.choice(wordlist)))
         return returned_word
 
 class Bot:
@@ -128,6 +120,7 @@ returned_sentence = (Constructor.random_sentence(sentences))
 returned_word = (Constructor.test_choose_word(words))
 sentence = (Constructor.random_sentence(sentences))
 
+#print(returned_word)
 #print(returned_sentence)
 #print(Bot.bot_sentence())
 #print(Constructor.random_sentence(sentences).format(Constructor.test_choose_word(words)))

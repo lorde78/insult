@@ -5,7 +5,7 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import * 
 from PyQt5.QtGui import *
 from PyQt5.QtCore import QTimer
-import variable as var
+import _variable as var
 
 
 class loadPage:
@@ -37,8 +37,8 @@ class loadPage:
         self.show()
         
         
-from homePage_0 import *
-from Mwindow import MWindow
+from _homePage_0 import *
+from _Mwindow import MWindow
 
 window = MWindow()
 
