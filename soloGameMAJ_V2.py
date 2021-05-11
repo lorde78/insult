@@ -6,9 +6,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 import variable as var
 import askingName_0
-from constructor_class import Bot, Constructor
-from sentences import sentences
-from words import words
+from constructor_class import *
 
 class SoloGame:
 
@@ -73,11 +71,11 @@ class SoloGame:
         self.verticalLayoutWidget_2.setStyleSheet("Background:transparent")
         
         def Propositions(self):
-                propositions = 4
-                i = 0
+                propositions = 5
+                i = 1
                 while i < propositions:
                         self.proposition = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
-                        self.proposition.setEnabled(True)
+                        # self.proposition.setEnabled(True)
                         self.proposition.setMaximumSize(QtCore.QSize(300, 30))
                         self.proposition.setSizeIncrement(QtCore.QSize(0, 0))
                         self.proposition.setBaseSize(QtCore.QSize(0, 0))
@@ -90,7 +88,23 @@ class SoloGame:
                         # self.proposition.clicked.connect(self.close)
                         
                         self.layoutPropositions.addWidget(self.proposition)
+                        print(word)
                         i+=1
+                def associateButtonWord(index):
+                        if index == 1:
+                                
+                # firstButton = proposition.QPushButton(1, self)
+                # secondButton = proposition.QPushButton(2, self)
+                # thirdButton = proposition.QPushButton(3, self)
+                # fourthButton = proposition.QPushButton(4, self)
+                # firstButton.setCheckable(True)
+                # secondButton.setCheckable(True)
+                # thirdButton.setCheckable(True)
+                # fourthButton.setCheckable(True)
+                # firstButton.setChecked(False)
+                # secondButton.setChecked(False)
+                # thirdButton.setChecked(False)
+                # fourthButton.setChecked(False)
         Propositions(self)
 
         self.ProfilPic_2 = QtWidgets.QLabel(self)
