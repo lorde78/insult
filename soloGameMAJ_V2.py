@@ -113,7 +113,6 @@ class SoloGame:
         self.words.append(word)
         prop4.setText(word)
 
-        print(words)
         #prop4.clicked.connect(self.)
 
         #def setword(self, pressed):
