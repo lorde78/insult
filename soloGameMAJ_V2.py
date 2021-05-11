@@ -13,7 +13,7 @@ class SoloGame:
 
     def __init__(self):
         self.random_phrase = None
-        self.words = []
+        self.mots = []
 #HEADER###############################
         self.Header = QtWidgets.QFrame(self)
         self.Header.setGeometry(QtCore.QRect(-1, -40, 362, 110))
@@ -71,15 +71,15 @@ class SoloGame:
         self.layoutPropositions.setSpacing(0)
         self.verticalLayoutWidget_2.setStyleSheet("Background:transparent")
         
-        word = Constructor.test_choose_word(words)
-        
+        # word = Constructor.test_choose_word(words)
+
         prop1 = QPushButton(self)
         prop1.setCheckable(True)
         prop1.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
         prop1.setMaximumSize(QtCore.QSize(300, 30))
         prop1.setGeometry(QtCore.QRect(30, 440, 271, 201))
         word = Constructor.test_choose_word(words)
-        self.words.append(word)
+        self.mots.append(word)
         prop1.setText(word)
         
         #prop1.clicked.connect(self.)
@@ -90,7 +90,7 @@ class SoloGame:
         prop2.setMaximumSize(QtCore.QSize(300, 30))
         prop2.setGeometry(QtCore.QRect(30, 490, 271, 201))
         word = Constructor.test_choose_word(words)
-        self.words.append(word)
+        self.mots.append(word)
         prop2.setText(word)
         #prop2.clicked.connect(self.)
 
@@ -100,7 +100,7 @@ class SoloGame:
         prop3.setMaximumSize(QtCore.QSize(300, 30))
         prop3.setGeometry(QtCore.QRect(30, 540, 271, 201))
         word = Constructor.test_choose_word(words)
-        self.words.append(word)
+        self.mots.append(word)
         prop3.setText(word)
         #prop3.clicked.connect(self.)
 
@@ -110,9 +110,10 @@ class SoloGame:
         prop4.setMaximumSize(QtCore.QSize(300, 30))
         prop4.setGeometry(QtCore.QRect(30, 590, 271, 201))
         word = Constructor.test_choose_word(words)
-        self.words.append(word)
+        self.mots.append(word)
         prop4.setText(word)
 
+        print(self.mots)
         #prop4.clicked.connect(self.)
 
         #def setword(self, pressed):

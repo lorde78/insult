@@ -98,7 +98,7 @@ class Constructor:
             elif alors == "c" and donc == "f":
                 score = score*1.5
             print(score)
-            return word, constructed_sentence
+            return constructed_sentence
 
     @staticmethod
     def random_sentence(sentences_list):
@@ -120,7 +120,7 @@ returned_sentence = (Constructor.random_sentence(sentences))
 returned_word = (Constructor.test_choose_word(words))
 sentence = (Constructor.random_sentence(sentences))
 
-print(returned_word)
+#print(returned_word)
 #print(returned_sentence)
 #print(Bot.bot_sentence())
 #print(Constructor.random_sentence(sentences).format(Constructor.test_choose_word(words)))
