@@ -18,7 +18,7 @@ class Constructor:
 
         word_choices = {}
 
-        print("Choisissez maintenant un mot à placer dans la phrase")
+        #print("Choisissez maintenant un mot à placer dans la phrase")
 
         # Same proccess here to select the word
         for i in range(1, 6):
@@ -128,8 +128,8 @@ returned_sentence = (Constructor.random_sentence(sentences))
 returned_word = (Constructor.test_choose_word(words))
 sentence = (Constructor.random_sentence(sentences))
 
-print(returned_sentence)
+#print(returned_sentence)
 #print(Bot.bot_sentence())
 #print(Constructor.random_sentence(sentences).format(Constructor.test_choose_word(words)))
-print(Constructor.choose_word(Constructor.test_choose_word(words)))
+#print(Constructor.choose_word(Constructor.test_choose_word(words)))
 #print(sentence.format(Constructor.test_choose_word(words)))
