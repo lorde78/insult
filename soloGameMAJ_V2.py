@@ -86,8 +86,8 @@ class SoloGame:
                         self.words.append(word)
                         self.proposition.setText(word)
                         self.proposition.setAutoDefault(False)
-                        self.proposition.clicked.connect(askingName_0.ReturnHome)
-                        self.proposition.clicked.connect(self.close)
+                        # self.proposition.clicked.connect(askingName_0.ReturnHome)
+                        # self.proposition.clicked.connect(self.close)
                         
                         self.layoutPropositions.addWidget(self.proposition)
                         i+=1
