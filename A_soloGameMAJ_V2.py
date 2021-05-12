@@ -4,12 +4,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import * 
 from PyQt5.QtGui import *
-import _variable as var
-import _askingName_0 as ask
+import A_variable as var
+import A_askingName_0 as ask
 from constructor_class import Bot, Constructor
 from sentences import sentences
 from words import words
-#underscore
 
 class SoloGame:
 

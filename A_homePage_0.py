@@ -1,9 +1,11 @@
-from _askingName_0 import AskingNamePage
+from A_askingName_0 import AskingNamePage
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
     ##Variables
-import _variable as var
+import A_variable as var
+from A_askingName_0 import *
+from A_Mwindow import MWindow
     
 class HomePage():
     
@@ -19,7 +21,7 @@ class HomePage():
         self.layout_frame1.setSpacing(0)
         self.layout_frame1.setObjectName("layout_frame1")
 
-#SOLO#########
+#SOLO######_###
         self.pushButtonSolo = QtWidgets.QPushButton(self.verticalLayoutWidget)
         self.pushButtonSolo.setMinimumSize(QtCore.QSize(0, 30))
         self.pushButtonSolo.setLayoutDirection(QtCore.Qt.LeftToRight)
@@ -79,8 +81,7 @@ class HomePage():
 
         self.show()
 
-from _askingName_0 import *
-from _Mwindow import MWindow
+
 window = MWindow()
 
 def PressedButtonSolo():
