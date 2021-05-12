@@ -9,6 +9,7 @@ import _askingName_0 as ask
 from constructor_class import Bot, Constructor
 from sentences import sentences
 from words import words
+#underscore
 
 class SoloGame:
 
