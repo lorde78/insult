@@ -4,7 +4,7 @@ words = [
     "un cours d'aqua-poney",
     "la messe du dimanche",
     "Maitre Gims",
-    "une vegan qui se demande si elle peut avaler",
+    "une vegan qui se demande \n si elle peut avaler",
     "redormir avec son ex",
     "sortir la sauce en 30s et s'en taper",
     "l'haleine du prof de maths",
