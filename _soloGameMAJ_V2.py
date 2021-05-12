@@ -63,100 +63,122 @@ class SoloGame:
                 self.panneauInf.setFrameShape(QtWidgets.QFrame.StyledPanel)
                 self.panneauInf.setFrameShadow(QtWidgets.QFrame.Raised)
 
+#COMMENtaire##############@          
+                # self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.panneauInf)
+                # self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(30, 20, 300, 200))
+                # self.layoutPropositions = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
+                # self.layoutPropositions.setContentsMargins(0, 0, 0, 0)
+                # self.layoutPropositions.setSpacing(0)
+                # self.verticalLayoutWidget_2.setStyleSheet("Background:transparent")
                 
-                self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.panneauInf)
-                self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(30, 20, 300, 200))
-                self.layoutPropositions = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
-                self.layoutPropositions.setContentsMargins(0, 0, 0, 0)
-                self.layoutPropositions.setSpacing(0)
-                self.verticalLayoutWidget_2.setStyleSheet("Background:transparent")
-                
-
-                def Propositions(self):
-                        propositions = 4
-                        i = 0
-                        while i < propositions:
-                                self.proposition = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
-                                self.proposition.setEnabled(True)
-                                self.proposition.setMaximumSize(QtCore.QSize(300, 30))
-                                self.proposition.setSizeIncrement(QtCore.QSize(0, 0))
-                                self.proposition.setBaseSize(QtCore.QSize(0, 0))
-                                self.proposition.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-                                word = Constructor.test_choose_word(words)
-                                self.mots.append(word)
-                                self.proposition.setText(word)
+                # def Propositions(self):
+                #         propositions = 4
+                #         i = 0
+                #         while i < propositions:
+                #                 self.proposition = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
+                #                 self.proposition.setEnabled(True)
+                #                 self.proposition.setMaximumSize(QtCore.QSize(300, 30))
+                #                 self.proposition.setSizeIncrement(QtCore.QSize(0, 0))
+                #                 self.proposition.setBaseSize(QtCore.QSize(0, 0))
+                #                 self.proposition.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
+                #                 word = Constructor.test_choose_word(words)
+                #                 self.mots.append(word)
+                #                 self.proposition.setText(word)
                                 
                                 
-                                self.layoutPropositions.addWidget(self.proposition)
-                                i+=1
-                Propositions(self)
-                self.verticalLayoutWidget = QtWidgets.QWidget(self)
-                self.verticalLayoutWidget.setGeometry(QtCore.QRect(19, 130, 321, 251))
-                self.layout_messagerie = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-                self.layout_messagerie.setContentsMargins(0, 0, 0, 0)
-                self.layout_messagerie.setSpacing(0)
-                self.verticalLayoutWidget.setStyleSheet("Background:transparent")
+                #                 self.layoutPropositions.addWidget(self.proposition)
+                #                 i+=1
+                # Propositions(self)
+                # self.verticalLayoutWidget = QtWidgets.QWidget(self)
+                # self.verticalLayoutWidget.setGeometry(QtCore.QRect(19, 130, 321, 251))
+                # self.layout_messagerie = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+                # self.layout_messagerie.setContentsMargins(0, 0, 0, 0)
+                # self.layout_messagerie.setSpacing(0)
+                # self.verticalLayoutWidget.setStyleSheet("Background:transparent")
 
-                def RepUSER(self):
-                        print("RepUSER")
-                        # self.repUser2 = QtWidgets.QLabel(self)
-                        # self.repUser2.setGeometry(QtCore.QRect(50, 300, 300, 30))
-                        # self.repUser2.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
-                        # self.repUser2.setAlignment(QtCore.Qt.AlignCenter)
-                        # self.repUser2.setText("Phrase Complête")
-                        self.repUser2 = QtWidgets.QLabel(self)
-                        self.repUser2.setGeometry(QtCore.QRect(50, 300, 300, 30))
-                        self.repUser2.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
-                        self.repUser2.setAlignment(QtCore.Qt.AlignCenter)
-                        self.repUser2.setText("Phrase Complête")
-                        self.layout_messagerie.addWidget(self.repUser2)
-                # self.proposition.clicked.connect(RepUSER)
-                RepUSER(self)
+                # def RepUSER(self):
+                #         print("RepUSER")
+                #         # self.repUser2 = QtWidgets.QLabel(self)
+                #         # self.repUser2.setGeometry(QtCore.QRect(50, 300, 300, 30))
+                #         # self.repUser2.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
+                #         # self.repUser2.setAlignment(QtCore.Qt.AlignCenter)
+                #         # self.repUser2.setText("Phrase Complête")
+                #         self.repUser2 = QtWidgets.QLabel(self)
+                #         self.repUser2.setGeometry(QtCore.QRect(50, 300, 300, 30))
+                #         self.repUser2.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
+                #         self.repUser2.setAlignment(QtCore.Qt.AlignCenter)
+                #         self.repUser2.setText("Phrase Complête")
+                #         self.layout_messagerie.addWidget(self.repUser2)
+                # # self.proposition.clicked.connect(RepUSER)
+                # RepUSER(self)
 
 
                  # word = Constructor.test_choose_word(words)
 
 
 ###PROPOSITIONS#################################
-                # prop1 = QPushButton(self)
-                # prop1.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-                # prop1.setMaximumSize(QtCore.QSize(300, 30))
-                # prop1.setGeometry(QtCore.QRect(30, 440, 300, 201))
-                # word = Constructor.test_choose_word(words)
-                # self.mots.append(word)
-                # prop1.setText(word)
-                
-                # #prop1.clicked.connect(self.)
+                def Clicked1():
+                        if prop1.clicked:
+                                print(self.mots[0])
+                                print(self.random_phrase.format(self.mots[0]))
+                                phrase1 = self.random_phrase.format(self.mots[0])
 
-                # prop2 = QPushButton(self)
-                # prop2.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-                # prop2.setMaximumSize(QtCore.QSize(300, 30))
-                # prop2.setGeometry(QtCore.QRect(30, 490, 300, 201))
-                # word = Constructor.test_choose_word(words)
-                # self.mots.append(word)
-                # prop2.setText(word)
-                # #prop2.clicked.connect(self.)
+                prop1 = QPushButton(self)
+                prop1.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
+                prop1.setMaximumSize(QtCore.QSize(300, 30))
+                prop1.setGeometry(QtCore.QRect(30, 440, 300, 201))
+                word = Constructor.test_choose_word(words)
+                self.mots.append(word)
+                prop1.setText(word)
+                prop1.clicked.connect(Clicked1)
 
-                # prop3 = QPushButton(self)
-                # prop3.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-                # prop3.setMaximumSize(QtCore.QSize(300, 30))
-                # prop3.setGeometry(QtCore.QRect(30, 540, 300, 201))
-                # word = Constructor.test_choose_word(words)
-                # self.mots.append(word)
-                # prop3.setText(word)
-                # #prop3.clicked.connect(self.)
+                def Clicked2():
+                        if prop1.clicked:
+                                print(self.mots[1])
+                                print(self.random_phrase.format(self.mots[1]))
+                                phrase2 = self.random_phrase.format(self.mots[1])
 
-                # prop4 = QPushButton(self)
-                # prop4.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-                # prop4.setMaximumSize(QtCore.QSize(300, 30))
-                # prop4.setGeometry(QtCore.QRect(30, 590, 300, 201))
-                # word = Constructor.test_choose_word(words)
-                # self.mots.append(word)
-                # prop4.setText(word)
+                prop2 = QPushButton(self)
+                prop2.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
+                prop2.setMaximumSize(QtCore.QSize(300, 30))
+                prop2.setGeometry(QtCore.QRect(30, 490, 300, 201))
+                word = Constructor.test_choose_word(words)
+                self.mots.append(word)
+                prop2.setText(word)
+                prop2.clicked.connect(Clicked2)
 
+                def Clicked3():
+                        if prop1.clicked:
+                                print(self.mots[2])
+                                print(self.random_phrase.format(self.mots[2]))
+                                phrase3 = self.random_phrase.format(self.mots[2])
+
+                prop3 = QPushButton(self)
+                prop3.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
+                prop3.setMaximumSize(QtCore.QSize(300, 30))
+                prop3.setGeometry(QtCore.QRect(30, 540, 300, 201))
+                word = Constructor.test_choose_word(words)
+                self.mots.append(word)
+                prop3.setText(word)
+                prop3.clicked.connect(Clicked3)
+
+                def Clicked4():
+                        if prop1.clicked:
+                                print(self.mots[3])
+                                print(self.random_phrase.format(self.mots[3]))
+                                phrase4 = self.random_phrase.format(self.mots[3])
+
+                prop4 = QPushButton(self)
+                prop4.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
+                prop4.setMaximumSize(QtCore.QSize(300, 30))
+                prop4.setGeometry(QtCore.QRect(30, 590, 300, 201))
+                word = Constructor.test_choose_word(words)
+                self.mots.append(word)
+                prop4.setText(word)
 
                 print(self.mots)
-                #prop4.clicked.connect(self.)
+
+                prop4.clicked.connect(Clicked4)
                 
                 
 ##########
