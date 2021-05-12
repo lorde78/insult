@@ -5,7 +5,11 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import * 
 from PyQt5.QtGui import *
 from PyQt5.QtCore import QTimer
-import variable as var
+import A_variable as var
+        
+from A_homePage_0 import *
+from A_Mwindow import MWindow
+
 
 
 class loadPage:
@@ -36,9 +40,6 @@ class loadPage:
         self.progressBar.setTextVisible(False)
         self.show()
         
-        
-from homePage_0 import *
-from Mwindow import MWindow
 
 window = MWindow()
 

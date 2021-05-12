@@ -2,10 +2,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
     ##Variables
-import variable as var
+import A_variable as var
 styleButtonHome = "QPushButton {background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px; color: "+var.degrade+";font-weight:bold}""QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}"
-    
-    
+
+from A_soloGameMAJ_V2 import *
+from A_Mwindow import MWindow    
+
 class AskingNamePage():
     
     def __init__ (self):
@@ -95,26 +97,24 @@ class AskingNamePage():
         self.show()
 
 
-Username = "coucou"
+Username = "UserXX"
 def Surnom(self):
     global Username
     Username = self
     print(Username)
     return Username
 
-from soloGameMAJ_V2 import *
-from Mwindow import MWindow
 
 window1 = MWindow()    
 def PressedButton_OK():
     print("Solo Game Start")
     SoloGame.__init__(window1)
 
-import homePage_0
+import A_homePage_0
 window2 = MWindow() 
 def ReturnHome():
         print("return home")
-        homePage_0.HomePage.__init__(window2)
+        A_homePage_0.HomePage.__init__(window2)
     
 
 

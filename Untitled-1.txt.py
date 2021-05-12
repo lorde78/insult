@@ -1,4 +1,6 @@
 #&&#
+#underscore
+hello = "hello"
 # !/usr/local/bin/python3
 import random
 
