@@ -16,18 +16,18 @@ class loadPage:
     
     def LoadPage (self):
         
-        self.label = QtWidgets.QLabel(self)
-        self.label.setGeometry(QtCore.QRect(0, -15, 360, 661))
-        self.label.setStyleSheet("background-color:"+var.degrade)
-        self.label.setPixmap(QtGui.QPixmap(var.path+"/images/LOGO/logo-blue.png"))
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        label = QtWidgets.QLabel(self)
+        label.setGeometry(QtCore.QRect(0, -15, 360, 661))
+        label.setStyleSheet("background-color:"+var.degrade)
+        label.setPixmap(QtGui.QPixmap(var.path+"/images/LOGO/logo-blue.png"))
+        label.setAlignment(QtCore.Qt.AlignCenter)
 
         ## Progress bar
-        self.progressBar = ProgressBar(self, self, minimum=0, maximum=3)
-        self.progressBar.setGeometry(QtCore.QRect(120, 450, 125, 10))
-        self.progressBar.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.progressBar.setAutoFillBackground(False)
-        self.progressBar.setStyleSheet(
+        progressBar = ProgressBar(self, self, minimum=0, maximum=3)
+        progressBar.setGeometry(QtCore.QRect(120, 450, 125, 10))
+        progressBar.setLayoutDirection(QtCore.Qt.LeftToRight)
+        progressBar.setAutoFillBackground(False)
+        progressBar.setStyleSheet(
             "QProgressBar{"
             "border-radius: 5px;"
             "}"
@@ -37,7 +37,7 @@ class loadPage:
             "margin: 2.5px;"
             "}"
             "Qt::AlignCenter")
-        self.progressBar.setTextVisible(False)
+        progressBar.setTextVisible(False)
         self.show()
         
 
