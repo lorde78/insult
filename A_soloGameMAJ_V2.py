@@ -1,5 +1,3 @@
-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import * 
@@ -114,14 +112,14 @@ class SoloGame:
 
                 windowBot = MWindow()    
                 def Clicked2(self):
-                        global phrase
-                        phraseBOT = self.random_phrase.format(words.pop(words.index(random.choice(words))))
+                        wordBot = words.pop(words.index(random.choice(words)))
+                        phraseBOT = self.random_phrase.format(wordBot)
                         AfficherBOT(self,phraseBOT)
 
                         # time.sleep(1.5)
                         # result.Game_Result.__init__(windowResult)
                         # self.close()
-                        return phraseBOT
+                        return phraseBOT, wordBot
 
                 prop1 = QPushButton(self)
                 prop1.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -173,7 +171,11 @@ class SoloGame:
 
                 print(self.mots)
 
-                def score(motChoisi):
+                def score(motChoisi, Michel, Bool):
+                        if True:
+                                Michel = returned_sentence
+                        elif False:
+                                Michel = phraseBOT
                         i = 0
                         alors = "z"
                         while i < len(Pcat1):
