@@ -113,12 +113,19 @@ class Constructor:
 class Bot:
 
     @staticmethod
-    def bot_sentence():
-        return returned_sentence.format(words.pop(words.index(random.choice(words))))
+    def bot_sentence(wordlist):
+        phraseBot = sentence.format(wordlist.pop(wordlist.index(random.choice(wordlist))))
+        return phraseBot
+    @staticmethod
+    def bot_word(wordlist):
+        wordBot = wordlist.pop(wordlist.index(random.choice(wordlist)))
+        return wordBot
 
 returned_sentence = (Constructor.random_sentence(sentences))
 returned_word = (Constructor.test_choose_word(words))
 sentence = (Constructor.random_sentence(sentences))
+motBot = (Bot.bot_word(words))
+
 
 #print(returned_word)
 #print(returned_sentence)
