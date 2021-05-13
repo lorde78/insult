@@ -103,8 +103,13 @@ class SoloGame:
                         # result.Game_Result.__init__(windowResult)
                         # self.close()
 
+<<<<<<< Updated upstream
                 def AfficherBOT (self,phraseBOT):
                         print("RepUSER")
+=======
+                def AfficherBOT (self,phraseBot):
+                        print("RepBOT")
+>>>>>>> Stashed changes
                         self.repUser2 = QtWidgets.QLabel(self)
                         self.repUser2.setGeometry(QtCore.QRect(50, 300, 300, 30))
                         self.repUser2.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
@@ -173,7 +178,22 @@ class SoloGame:
 
                 print(self.mots)
 
+<<<<<<< Updated upstream
                 def score(motChoisi):
+=======
+                def score(motChoisi, Bool):
+                        global resultScore
+                        scorePlayer = 0
+                        scoreBot = 0
+                        if Bool:
+                                toggleMot = motChoisi
+                                toggleScore = scorePlayer
+                                resultScore = 0
+                                
+                        else:
+                                toggleMot = motBot
+                                toggleScore = scoreBot
+>>>>>>> Stashed changes
                         i = 0
                         alors = "z"
                         while i < len(Pcat1):
@@ -226,8 +246,21 @@ class SoloGame:
                         elif alors == "c" and donc == "d":
                                 score = score*1.5
                         elif alors == "c" and donc == "f":
+<<<<<<< Updated upstream
                                 score = score*1.5
                         print(score)
+=======
+                                toggleScore = toggleScore*1.5
+                        print(toggleScore)
+                        
+                        if resultScore == 0:
+                                resultScore = toggleScore
+                        else:
+                                total = resultScore - toggleScore
+                                print(total)                     
+                        return resultScore
+
+>>>>>>> Stashed changes
 
                 
                 
@@ -299,7 +332,11 @@ class SoloGame:
 
                 self.show()
 
+<<<<<<< Updated upstream
       
 
 
+=======
+resultScore = 0
+>>>>>>> Stashed changes
 
