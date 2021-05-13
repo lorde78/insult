@@ -6,12 +6,13 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 import A_variable as var
 import A_askingName_0 as ask
-from constructor_class import Bot, Constructor
+from constructor_class import *
 from sentences import sentences
 from words import words
 import time
 import A_gameResult as result
 from A_Mwindow import MWindow 
+from points import *
 
 
 class SoloGame:
@@ -110,7 +111,9 @@ class SoloGame:
                 word = Constructor.test_choose_word(words)
                 self.mots.append(word)
                 prop1.setText(word)
+                word1 = word
                 prop1.clicked.connect(lambda: Clicked(0,self))
+                prop1.clicked.connect(lambda: score(word1))
 
                 prop2 = QPushButton(self)
                 prop2.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -119,7 +122,9 @@ class SoloGame:
                 word = Constructor.test_choose_word(words)
                 self.mots.append(word)
                 prop2.setText(word)
+                word2 = word
                 prop2.clicked.connect(lambda: Clicked(1,self))
+                prop2.clicked.connect(lambda: score(word2))
 
                 prop3 = QPushButton(self)
                 prop3.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -128,7 +133,9 @@ class SoloGame:
                 word = Constructor.test_choose_word(words)
                 self.mots.append(word)
                 prop3.setText(word)
+                word3 = word
                 prop3.clicked.connect(lambda: Clicked(2,self))
+                prop3.clicked.connect(lambda: score(word3))
 
                 prop4 = QPushButton(self)
                 prop4.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -137,10 +144,68 @@ class SoloGame:
                 word = Constructor.test_choose_word(words)
                 self.mots.append(word)
                 prop4.setText(word)
+                word4 = word
                 prop4.clicked.connect(lambda: Clicked(3,self))
+                prop4.clicked.connect(lambda: score(word4))
 
 
                 print(self.mots)
+
+                def score(motChoisi):
+                        i = 0
+                        alors = "z"
+                        while i < len(Pcat1):
+                                if Pcat1[i] == returned_sentence:
+                                        alors = "a"
+                                i += 1
+                        if alors == "z":
+                                j = 0
+                                while j < len(Pcat2):
+                                        if Pcat2[j] == returned_sentence:
+                                                alors = "b"
+                                        j += 1
+                        if alors == "z":
+                                k = 0
+                                while k < len(Pcat3):
+                                        if Pcat3[k] == returned_sentence:
+                                                alors = "c"
+                                        k += 1
+                        print(alors)
+                        l = 0
+                        donc = "y"
+                        while l < len(Mcat1):
+                                if Mcat1[l] == motChoisi:
+                                        donc = "d"
+                                l += 1
+                        if donc == "y":    
+                                m = 0
+                                while m < len(Mcat2):
+                                        if Mcat2[m] == motChoisi:
+                                                donc == "e"
+                                        m += 1        
+                        if donc == "y":
+                                n = 0
+                                while n < len(Mcat3):
+                                        if Mcat3[n] == motChoisi:
+                                                donc = "f"
+                                        n += 1
+                        print(donc)
+
+                        valuable = 0
+                        score = valuable + points[motChoisi]
+                        if alors == "a" and donc == "d":
+                                score = score*2
+                        elif alors == "a" and donc == "f":
+                                score = score*1.5
+                        elif alors == "b" and donc == "e":
+                                score = score*2
+                        elif alors == "c" and donc == "e":
+                                score = score*2
+                        elif alors == "c" and donc == "d":
+                                score = score*1.5
+                        elif alors == "c" and donc == "f":
+                                score = score*1.5
+                        print(score)
 
                 
                 
