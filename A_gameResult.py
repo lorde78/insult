@@ -26,7 +26,7 @@ class Game_Result:
                 self.repUser2.setText(phrase)
                 self.layout_messagerie.addWidget(self.repUser2)
 
-        phraseReturn = game.phrase
+        phraseReturn = game.SoloGame.__init__.Clicked.phrase
         RepUSER(self,phraseReturn)
 
         self.show()

@@ -72,15 +72,35 @@ class SoloGame:
 
 
 ###PROPOSITIONS#################################
+                self.verticalLayoutWidget = QtWidgets.QWidget(self)
+                self.verticalLayoutWidget.setGeometry(QtCore.QRect(19, 130, 321, 251))
+                self.layout_messagerie = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+                self.layout_messagerie.setContentsMargins(0, 0, 0, 0)
+                self.layout_messagerie.setSpacing(0)
+                self.verticalLayoutWidget.setStyleSheet("Background:transparent")
+
+                def Afficher (self,phraseReturn):
+                        print("RepUSER")
+                        self.repUser2 = QtWidgets.QLabel(self)
+                        self.repUser2.setGeometry(QtCore.QRect(50, 300, 300, 30))
+                        self.repUser2.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
+                        self.repUser2.setAlignment(QtCore.Qt.AlignCenter)
+                        self.repUser2.setText(phraseReturn)
+                        self.layout_messagerie.addWidget(self.repUser2)
+                    
+
+
                 windowResult = MWindow()    
-                def Clicked(index):
+                def Clicked(index,self):
                         print(self.mots[index])
                         print(self.random_phrase.format(self.mots[index]))
                         global phrase
                         phrase = self.random_phrase.format(self.mots[index])
-                        time.sleep(1.5)
-                        result.Game_Result.__init__(windowResult)
-                        self.close()
+                        Afficher(self,phrase)
+
+                        # time.sleep(1.5)
+                        # result.Game_Result.__init__(windowResult)
+                        # self.close()
                         return phrase
 
                 prop1 = QPushButton(self)
@@ -90,7 +110,7 @@ class SoloGame:
                 word = Constructor.test_choose_word(words)
                 self.mots.append(word)
                 prop1.setText(word)
-                prop1.clicked.connect(lambda: Clicked(0))
+                prop1.clicked.connect(lambda: Clicked(0,self))
 
                 prop2 = QPushButton(self)
                 prop2.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -99,7 +119,7 @@ class SoloGame:
                 word = Constructor.test_choose_word(words)
                 self.mots.append(word)
                 prop2.setText(word)
-                prop2.clicked.connect(lambda: Clicked(1))
+                prop2.clicked.connect(lambda: Clicked(1,self))
 
                 prop3 = QPushButton(self)
                 prop3.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -108,7 +128,7 @@ class SoloGame:
                 word = Constructor.test_choose_word(words)
                 self.mots.append(word)
                 prop3.setText(word)
-                prop3.clicked.connect(lambda: Clicked(2))
+                prop3.clicked.connect(lambda: Clicked(2,self))
 
                 prop4 = QPushButton(self)
                 prop4.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -117,7 +137,7 @@ class SoloGame:
                 word = Constructor.test_choose_word(words)
                 self.mots.append(word)
                 prop4.setText(word)
-                prop4.clicked.connect(lambda: Clicked(3))
+                prop4.clicked.connect(lambda: Clicked(3,self))
 
 
                 print(self.mots)
