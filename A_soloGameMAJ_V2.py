@@ -102,7 +102,7 @@ class SoloGame:
                         # self.close()
 
                 def AfficherBOT (self,phraseBot):
-                        print("RepUSER")
+                        print("RepBOT")
                         self.repUser2 = QtWidgets.QLabel(self)
                         self.repUser2.setGeometry(QtCore.QRect(50, 300, 300, 30))
                         self.repUser2.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
@@ -173,11 +173,14 @@ class SoloGame:
                 print(self.mots)
 
                 def score(motChoisi, Bool):
+                        global resultScore
                         scorePlayer = 0
                         scoreBot = 0
                         if Bool:
                                 toggleMot = motChoisi
                                 toggleScore = scorePlayer
+                                resultScore = 0
+                                
                         else:
                                 toggleMot = motBot
                                 toggleScore = scoreBot
@@ -235,6 +238,14 @@ class SoloGame:
                         elif alors == "c" and donc == "f":
                                 toggleScore = toggleScore*1.5
                         print(toggleScore)
+                        
+                        if resultScore == 0:
+                                resultScore = toggleScore
+                        else:
+                                total = resultScore - toggleScore
+                                print(total)                     
+                        return resultScore
+
 
                 
                 
@@ -305,6 +316,5 @@ class SoloGame:
 ############
 
                 self.show()
-
-
+resultScore = 0
 
