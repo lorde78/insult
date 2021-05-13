@@ -104,6 +104,26 @@ class SoloGame:
                         # self.close()
                         return phrase
 
+                def AfficherBOT (self,phraseBOT):
+                        print("RepUSER")
+                        self.repUser2 = QtWidgets.QLabel(self)
+                        self.repUser2.setGeometry(QtCore.QRect(50, 300, 300, 30))
+                        self.repUser2.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
+                        self.repUser2.setAlignment(QtCore.Qt.AlignCenter)
+                        self.repUser2.setText(phraseBOT)
+                        self.layout_messagerie.addWidget(self.repUser2)
+
+                windowBot = MWindow()    
+                def Clicked2(self):
+                        global phrase
+                        phraseBOT = self.random_phrase.format(words.pop(words.index(random.choice(words))))
+                        AfficherBOT(self,phraseBOT)
+
+                        # time.sleep(1.5)
+                        # result.Game_Result.__init__(windowResult)
+                        # self.close()
+                        return phraseBOT
+
                 prop1 = QPushButton(self)
                 prop1.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
                 prop1.setMaximumSize(QtCore.QSize(300, 30))
@@ -114,6 +134,7 @@ class SoloGame:
                 word1 = word
                 prop1.clicked.connect(lambda: Clicked(0,self))
                 prop1.clicked.connect(lambda: score(word1))
+                prop1.clicked.connect(lambda: Clicked2(self))
 
                 prop2 = QPushButton(self)
                 prop2.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -125,6 +146,7 @@ class SoloGame:
                 word2 = word
                 prop2.clicked.connect(lambda: Clicked(1,self))
                 prop2.clicked.connect(lambda: score(word2))
+                prop2.clicked.connect(lambda: Clicked2(self))
 
                 prop3 = QPushButton(self)
                 prop3.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -136,6 +158,7 @@ class SoloGame:
                 word3 = word
                 prop3.clicked.connect(lambda: Clicked(2,self))
                 prop3.clicked.connect(lambda: score(word3))
+                prop3.clicked.connect(lambda: Clicked2(self))
 
                 prop4 = QPushButton(self)
                 prop4.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -147,6 +170,7 @@ class SoloGame:
                 word4 = word
                 prop4.clicked.connect(lambda: Clicked(3,self))
                 prop4.clicked.connect(lambda: score(word4))
+                prop4.clicked.connect(lambda: Clicked2(self))
 
 
                 print(self.mots)
@@ -229,6 +253,7 @@ class SoloGame:
                 self.Sentence_.setAlignment(QtCore.Qt.AlignCenter)
                 self.random_phrase = Constructor.random_sentence(sentences)
                 self.Sentence_.setText(self.random_phrase)
+                
         
         ####
                 self.picBot = QtWidgets.QLabel(self)
