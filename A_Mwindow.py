@@ -15,7 +15,7 @@ class MWindow(QMainWindow):
         self.setStyleSheet(
         "background-color: white"
         )
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(path+"/images/LOGO/logo-blue.png"))
+        self.icon = QtGui.QIcon()
+        self.icon.addPixmap(QtGui.QPixmap(path+"/images/LOGO/logo-blue.png"))
 
         
