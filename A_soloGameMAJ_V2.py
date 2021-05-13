@@ -6,12 +6,13 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 import A_variable as var
 import A_askingName_0 as ask
-from constructor_class import Bot, Constructor
+from constructor_class import *
 from sentences import sentences
 from words import words
 import time
 import A_gameResult as result
 from A_Mwindow import MWindow 
+from points import *
 
 
 class SoloGame:
@@ -101,6 +102,78 @@ class SoloGame:
 
                         # result.Game_Result.__init__(windowResult)
                         # self.close()
+<<<<<<< sologamemodif
+=======
+                        return phrase
+
+                def AfficherBOT (self,phraseBOT):
+                        print("RepUSER")
+                        self.repUser2 = QtWidgets.QLabel(self)
+                        self.repUser2.setGeometry(QtCore.QRect(50, 300, 300, 30))
+                        self.repUser2.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
+                        self.repUser2.setAlignment(QtCore.Qt.AlignCenter)
+                        self.repUser2.setText(phraseBOT)
+                        self.layout_messagerie.addWidget(self.repUser2)
+
+                windowBot = MWindow()    
+                def Clicked2(self):
+                        global phrase
+                        phraseBOT = self.random_phrase.format(words.pop(words.index(random.choice(words))))
+                        AfficherBOT(self,phraseBOT)
+
+                        # time.sleep(1.5)
+                        # result.Game_Result.__init__(windowResult)
+                        # self.close()
+                        return phraseBOT
+
+                prop1 = QPushButton(self)
+                prop1.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
+                prop1.setMaximumSize(QtCore.QSize(300, 30))
+                prop1.setGeometry(QtCore.QRect(30, 440, 300, 201))
+                word = Constructor.test_choose_word(words)
+                self.mots.append(word)
+                prop1.setText(word)
+                word1 = word
+                prop1.clicked.connect(lambda: Clicked(0,self))
+                prop1.clicked.connect(lambda: score(word1))
+                prop1.clicked.connect(lambda: Clicked2(self))
+
+                prop2 = QPushButton(self)
+                prop2.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
+                prop2.setMaximumSize(QtCore.QSize(300, 30))
+                prop2.setGeometry(QtCore.QRect(30, 490, 300, 201))
+                word = Constructor.test_choose_word(words)
+                self.mots.append(word)
+                prop2.setText(word)
+                word2 = word
+                prop2.clicked.connect(lambda: Clicked(1,self))
+                prop2.clicked.connect(lambda: score(word2))
+                prop2.clicked.connect(lambda: Clicked2(self))
+
+                prop3 = QPushButton(self)
+                prop3.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
+                prop3.setMaximumSize(QtCore.QSize(300, 30))
+                prop3.setGeometry(QtCore.QRect(30, 540, 300, 201))
+                word = Constructor.test_choose_word(words)
+                self.mots.append(word)
+                prop3.setText(word)
+                word3 = word
+                prop3.clicked.connect(lambda: Clicked(2,self))
+                prop3.clicked.connect(lambda: score(word3))
+                prop3.clicked.connect(lambda: Clicked2(self))
+
+                prop4 = QPushButton(self)
+                prop4.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
+                prop4.setMaximumSize(QtCore.QSize(300, 30))
+                prop4.setGeometry(QtCore.QRect(30, 590, 300, 201))
+                word = Constructor.test_choose_word(words)
+                self.mots.append(word)
+                prop4.setText(word)
+                word4 = word
+                prop4.clicked.connect(lambda: Clicked(3,self))
+                prop4.clicked.connect(lambda: score(word4))
+                prop4.clicked.connect(lambda: Clicked2(self))
+>>>>>>> master
 
                 def Propsitions(self):
                         prop1 = QPushButton(self)
@@ -142,6 +215,62 @@ class SoloGame:
 
                 print(self.mots)
 
+                def score(motChoisi):
+                        i = 0
+                        alors = "z"
+                        while i < len(Pcat1):
+                                if Pcat1[i] == returned_sentence:
+                                        alors = "a"
+                                i += 1
+                        if alors == "z":
+                                j = 0
+                                while j < len(Pcat2):
+                                        if Pcat2[j] == returned_sentence:
+                                                alors = "b"
+                                        j += 1
+                        if alors == "z":
+                                k = 0
+                                while k < len(Pcat3):
+                                        if Pcat3[k] == returned_sentence:
+                                                alors = "c"
+                                        k += 1
+                        print(alors)
+                        l = 0
+                        donc = "y"
+                        while l < len(Mcat1):
+                                if Mcat1[l] == motChoisi:
+                                        donc = "d"
+                                l += 1
+                        if donc == "y":    
+                                m = 0
+                                while m < len(Mcat2):
+                                        if Mcat2[m] == motChoisi:
+                                                donc == "e"
+                                        m += 1        
+                        if donc == "y":
+                                n = 0
+                                while n < len(Mcat3):
+                                        if Mcat3[n] == motChoisi:
+                                                donc = "f"
+                                        n += 1
+                        print(donc)
+
+                        valuable = 0
+                        score = valuable + points[motChoisi]
+                        if alors == "a" and donc == "d":
+                                score = score*2
+                        elif alors == "a" and donc == "f":
+                                score = score*1.5
+                        elif alors == "b" and donc == "e":
+                                score = score*2
+                        elif alors == "c" and donc == "e":
+                                score = score*2
+                        elif alors == "c" and donc == "d":
+                                score = score*1.5
+                        elif alors == "c" and donc == "f":
+                                score = score*1.5
+                        print(score)
+
                 
                 
                 
@@ -164,6 +293,7 @@ class SoloGame:
                 self.Sentence_.setAlignment(QtCore.Qt.AlignCenter)
                 self.random_phrase = Constructor.random_sentence(sentences)
                 self.Sentence_.setText(self.random_phrase)
+                
         
         ####
                 self.picBot = QtWidgets.QLabel(self)
