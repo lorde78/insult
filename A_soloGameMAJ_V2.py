@@ -9,6 +9,10 @@ import A_askingName_0 as ask
 from constructor_class import Bot, Constructor
 from sentences import sentences
 from words import words
+import time
+import A_gameResult as result
+from A_Mwindow import MWindow 
+
 
 class SoloGame:
 
@@ -16,32 +20,35 @@ class SoloGame:
                 self.random_phrase = None
                 self.mots = []
         #HEADER###############################
-                self.Header = QtWidgets.QFrame(self)
-                self.Header.setGeometry(QtCore.QRect(-1, -40, 362, 110))
-                self.Header.setStyleSheet("QFrame{background-color: white; border: 1px solid "+var.degrade+"; border-radius: 10px;}")
-                self.Header.setFrameShape(QtWidgets.QFrame.StyledPanel)
-                self.Header.setFrameShadow(QtWidgets.QFrame.Raised)
+                def Header (self,nameEnnemy):
+                        self.Header = QtWidgets.QFrame(self)
+                        self.Header.setGeometry(QtCore.QRect(-1, -40, 362, 110))
+                        self.Header.setStyleSheet("QFrame{background-color: white; border: 1px solid "+var.degrade+"; border-radius: 10px;}")
+                        self.Header.setFrameShape(QtWidgets.QFrame.StyledPanel)
+                        self.Header.setFrameShadow(QtWidgets.QFrame.Raised)
 
-                self.ProfilPic = QtWidgets.QLabel(self.Header)
-                self.ProfilPic.setGeometry(QtCore.QRect(30, 55, 40, 40))
-                self.ProfilPic.setStyleSheet(var.styleProfilPic)
-                self.ProfilPic.setPixmap(QtGui.QPixmap(var.PicEnnemy))
-                self.ProfilPic.setScaledContents(True)
-                self.ProfilPic.setAlignment(QtCore.Qt.AlignCenter)
-        
-                self.online = QtWidgets.QFrame(self.Header)
-                self.online.setGeometry(QtCore.QRect(60, 75, 15, 15))
-                self.online.setStyleSheet("background: #3DBC3A;border: 1.5px solid #FFFFFF;border-radius: 7px; ")
-                self.online.setFrameShape(QtWidgets.QFrame.StyledPanel)
-                self.online.setFrameShadow(QtWidgets.QFrame.Raised)
+                        self.ProfilPic = QtWidgets.QLabel(self.Header)
+                        self.ProfilPic.setGeometry(QtCore.QRect(30, 55, 40, 40))
+                        self.ProfilPic.setStyleSheet(var.styleProfilPic)
+                        self.ProfilPic.setPixmap(QtGui.QPixmap(var.PicEnnemy))
+                        self.ProfilPic.setScaledContents(True)
+                        self.ProfilPic.setAlignment(QtCore.Qt.AlignCenter)
+                
+                        self.online = QtWidgets.QFrame(self.Header)
+                        self.online.setGeometry(QtCore.QRect(60, 75, 15, 15))
+                        self.online.setStyleSheet("background: #3DBC3A;border: 1.5px solid #FFFFFF;border-radius: 7px; ")
+                        self.online.setFrameShape(QtWidgets.QFrame.StyledPanel)
+                        self.online.setFrameShadow(QtWidgets.QFrame.Raised)
 
 
-                self.nameEnnemy = QtWidgets.QLabel(self.Header)
-                self.nameEnnemy.setGeometry(QtCore.QRect(80, 70, 110, 16))
-                self.nameEnnemy.setStyleSheet("font-weight: bold;font-size: 14px;line-height: 21px;color:blue;border:0px;")
-                self.nameEnnemy.setTextFormat(QtCore.Qt.AutoText)
-                self.nameEnnemy.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
-                self.nameEnnemy.setText("Name ennemy")
+                        self.nameEnnemy = QtWidgets.QLabel(self.Header)
+                        self.nameEnnemy.setGeometry(QtCore.QRect(80, 70, 110, 16))
+                        self.nameEnnemy.setStyleSheet("font-weight: bold;font-size: 14px;line-height: 21px;color:blue;border:0px;")
+                        self.nameEnnemy.setTextFormat(QtCore.Qt.AutoText)
+                        self.nameEnnemy.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
+                        self.nameEnnemy.setText(nameEnnemy)
+                nameEnnemy = var.UserEnnemy
+                Header(self,nameEnnemy)
 
                 #HOME BUTTON
                 self.pushButton = QtWidgets.QPushButton(self.Header)
@@ -63,65 +70,18 @@ class SoloGame:
                 self.panneauInf.setFrameShape(QtWidgets.QFrame.StyledPanel)
                 self.panneauInf.setFrameShadow(QtWidgets.QFrame.Raised)
 
-#COMMENtaire##############@          
-                # self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.panneauInf)
-                # self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(30, 20, 300, 200))
-                # self.layoutPropositions = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
-                # self.layoutPropositions.setContentsMargins(0, 0, 0, 0)
-                # self.layoutPropositions.setSpacing(0)
-                # self.verticalLayoutWidget_2.setStyleSheet("Background:transparent")
-                
-                # def Propositions(self):
-                #         propositions = 4
-                #         i = 0
-                #         while i < propositions:
-                #                 self.proposition = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
-                #                 self.proposition.setEnabled(True)
-                #                 self.proposition.setMaximumSize(QtCore.QSize(300, 30))
-                #                 self.proposition.setSizeIncrement(QtCore.QSize(0, 0))
-                #                 self.proposition.setBaseSize(QtCore.QSize(0, 0))
-                #                 self.proposition.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-                #                 word = Constructor.test_choose_word(words)
-                #                 self.mots.append(word)
-                #                 self.proposition.setText(word)
-                                
-                                
-                #                 self.layoutPropositions.addWidget(self.proposition)
-                #                 i+=1
-                # Propositions(self)
-                # self.verticalLayoutWidget = QtWidgets.QWidget(self)
-                # self.verticalLayoutWidget.setGeometry(QtCore.QRect(19, 130, 321, 251))
-                # self.layout_messagerie = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-                # self.layout_messagerie.setContentsMargins(0, 0, 0, 0)
-                # self.layout_messagerie.setSpacing(0)
-                # self.verticalLayoutWidget.setStyleSheet("Background:transparent")
-
-                # def RepUSER(self):
-                #         print("RepUSER")
-                #         # self.repUser2 = QtWidgets.QLabel(self)
-                #         # self.repUser2.setGeometry(QtCore.QRect(50, 300, 300, 30))
-                #         # self.repUser2.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
-                #         # self.repUser2.setAlignment(QtCore.Qt.AlignCenter)
-                #         # self.repUser2.setText("Phrase Complête")
-                #         self.repUser2 = QtWidgets.QLabel(self)
-                #         self.repUser2.setGeometry(QtCore.QRect(50, 300, 300, 30))
-                #         self.repUser2.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
-                #         self.repUser2.setAlignment(QtCore.Qt.AlignCenter)
-                #         self.repUser2.setText("Phrase Complête")
-                #         self.layout_messagerie.addWidget(self.repUser2)
-                # # self.proposition.clicked.connect(RepUSER)
-                # RepUSER(self)
-
-
-                 # word = Constructor.test_choose_word(words)
-
 
 ###PROPOSITIONS#################################
-                def Clicked1():
-                        if prop1.clicked:
-                                print(self.mots[0])
-                                print(self.random_phrase.format(self.mots[0]))
-                                phrase1 = self.random_phrase.format(self.mots[0])
+                windowResult = MWindow()    
+                def Clicked(index):
+                        print(self.mots[index])
+                        print(self.random_phrase.format(self.mots[index]))
+                        global phrase
+                        phrase = self.random_phrase.format(self.mots[index])
+                        time.sleep(1.5)
+                        result.Game_Result.__init__(windowResult)
+                        self.close()
+                        return phrase
 
                 prop1 = QPushButton(self)
                 prop1.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -130,13 +90,7 @@ class SoloGame:
                 word = Constructor.test_choose_word(words)
                 self.mots.append(word)
                 prop1.setText(word)
-                prop1.clicked.connect(Clicked1)
-
-                def Clicked2():
-                        if prop1.clicked:
-                                print(self.mots[1])
-                                print(self.random_phrase.format(self.mots[1]))
-                                phrase2 = self.random_phrase.format(self.mots[1])
+                prop1.clicked.connect(lambda: Clicked(0))
 
                 prop2 = QPushButton(self)
                 prop2.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -145,13 +99,7 @@ class SoloGame:
                 word = Constructor.test_choose_word(words)
                 self.mots.append(word)
                 prop2.setText(word)
-                prop2.clicked.connect(Clicked2)
-
-                def Clicked3():
-                        if prop1.clicked:
-                                print(self.mots[2])
-                                print(self.random_phrase.format(self.mots[2]))
-                                phrase3 = self.random_phrase.format(self.mots[2])
+                prop2.clicked.connect(lambda: Clicked(1))
 
                 prop3 = QPushButton(self)
                 prop3.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -160,13 +108,7 @@ class SoloGame:
                 word = Constructor.test_choose_word(words)
                 self.mots.append(word)
                 prop3.setText(word)
-                prop3.clicked.connect(Clicked3)
-
-                def Clicked4():
-                        if prop1.clicked:
-                                print(self.mots[3])
-                                print(self.random_phrase.format(self.mots[3]))
-                                phrase4 = self.random_phrase.format(self.mots[3])
+                prop3.clicked.connect(lambda: Clicked(2))
 
                 prop4 = QPushButton(self)
                 prop4.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -175,10 +117,12 @@ class SoloGame:
                 word = Constructor.test_choose_word(words)
                 self.mots.append(word)
                 prop4.setText(word)
+                prop4.clicked.connect(lambda: Clicked(3))
+
 
                 print(self.mots)
 
-                prop4.clicked.connect(Clicked4)
+                
                 
                 
 ##########
@@ -188,27 +132,7 @@ class SoloGame:
                 self.ProfilPic_2.setPixmap(QtGui.QPixmap(var.PicEnnemy))
                 self.ProfilPic_2.setScaledContents(True)
                 self.ProfilPic_2.setAlignment(QtCore.Qt.AlignCenter)
-
-#MESSAGERIE###############################################################
-                self.verticalLayoutWidget = QtWidgets.QWidget(self)
-                self.verticalLayoutWidget.setGeometry(QtCore.QRect(19, 130, 321, 251))
-                self.layout_messagerie = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-                self.layout_messagerie.setContentsMargins(0, 0, 0, 0)
-                self.layout_messagerie.setSpacing(0)
-                self.verticalLayoutWidget.setStyleSheet("Background:transparent")
-                
-                # self.repUser = QtWidgets.QLabel(self)
-                # self.repUser.setGeometry(QtCore.QRect(50, 300, 300, 30))
-                # self.repUser.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
-                # self.repUser.setAlignment(QtCore.Qt.AlignCenter)
-                # self.repUser.setText("phrase complêtexxxxxxxxxxxxxx")
             
-                # self.repUser2 = QtWidgets.QLabel(self)
-                # self.repUser2.setGeometry(QtCore.QRect(50, 300, 300, 30))
-                # self.repUser2.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
-                # self.repUser2.setAlignment(QtCore.Qt.AlignCenter)
-                # self.repUser2.setText("Phrase Complête")
-                # self.layout_messagerie.addWidget(self.repUser2)              
 
 #PHRASE A COMPLETER###############################################################
 

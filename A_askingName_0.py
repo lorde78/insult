@@ -6,7 +6,9 @@ import A_variable as var
 styleButtonHome = "QPushButton {background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px; color: "+var.degrade+";font-weight:bold}""QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}"
 
 from A_soloGameMAJ_V2 import *
-from A_Mwindow import MWindow    
+from A_Mwindow import MWindow 
+
+import A_homePage_0  as home
 
 class AskingNamePage():
     
@@ -110,11 +112,10 @@ def PressedButton_OK():
     print("Solo Game Start")
     SoloGame.__init__(window1)
 
-import A_homePage_0
 window2 = MWindow() 
 def ReturnHome():
         print("return home")
-        A_homePage_0.HomePage.__init__(window2)
+        home.HomePage.__init__(window2)
     
 
 
