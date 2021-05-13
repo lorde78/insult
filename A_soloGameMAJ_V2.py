@@ -101,26 +101,23 @@ class SoloGame:
                         # result.Game_Result.__init__(windowResult)
                         # self.close()
 
-                def AfficherBOT (self,phraseBOT):
+                def AfficherBOT (self,phraseBot):
                         print("RepUSER")
                         self.repUser2 = QtWidgets.QLabel(self)
                         self.repUser2.setGeometry(QtCore.QRect(50, 300, 300, 30))
                         self.repUser2.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
                         self.repUser2.setAlignment(QtCore.Qt.AlignCenter)
-                        self.repUser2.setText(phraseBOT)
+                        self.repUser2.setText(phraseBot)
                         self.layout_messagerie.addWidget(self.repUser2)
 
-                windowBot = MWindow()    
                 def Clicked2(self):
-                        wordBot = words.pop(words.index(random.choice(words)))
-                        phraseBOT = self.random_phrase.format(wordBot)
-                        AfficherBOT(self,phraseBOT)
+                        phraseBot = self.random_phrase.format(words.pop(words.index(random.choice(words))))
+                        AfficherBOT(self,phraseBot)
 
                         # time.sleep(1.5)
-                        # result.Game_Result.__init__(windowResult)
+                        # result.Game_Result.init(windowResult)
                         # self.close()
-                        return phraseBOT, wordBot
-
+                        return phraseBot
                 prop1 = QPushButton(self)
                 prop1.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
                 prop1.setMaximumSize(QtCore.QSize(300, 30))
@@ -130,8 +127,9 @@ class SoloGame:
                 prop1.setText(word)
                 word1 = word
                 prop1.clicked.connect(lambda: Clicked(0,self))
-                prop1.clicked.connect(lambda: score(word1))
+                prop1.clicked.connect(lambda: score(word1,True))
                 prop1.clicked.connect(lambda: Clicked2(self))
+                prop1.clicked.connect(lambda: score(word1,False))
 
                 prop2 = QPushButton(self)
                 prop2.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -142,8 +140,9 @@ class SoloGame:
                 prop2.setText(word)
                 word2 = word
                 prop2.clicked.connect(lambda: Clicked(1,self))
-                prop2.clicked.connect(lambda: score(word2))
+                prop2.clicked.connect(lambda: score(word2,True))
                 prop2.clicked.connect(lambda: Clicked2(self))
+                prop2.clicked.connect(lambda: score(word2,False))
 
                 prop3 = QPushButton(self)
                 prop3.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -154,8 +153,9 @@ class SoloGame:
                 prop3.setText(word)
                 word3 = word
                 prop3.clicked.connect(lambda: Clicked(2,self))
-                prop3.clicked.connect(lambda: score(word3))
+                prop3.clicked.connect(lambda: score(word3,True))
                 prop3.clicked.connect(lambda: Clicked2(self))
+                prop3.clicked.connect(lambda: score(word3,False))
 
                 prop4 = QPushButton(self)
                 prop4.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
@@ -166,16 +166,21 @@ class SoloGame:
                 prop4.setText(word)
                 word4 = word
                 prop4.clicked.connect(lambda: Clicked(3,self))
-                prop4.clicked.connect(lambda: score(word4))
+                prop4.clicked.connect(lambda: score(word4,True))
                 prop4.clicked.connect(lambda: Clicked2(self))
+                prop4.clicked.connect(lambda: score(word4,False))
 
                 print(self.mots)
 
-                def score(motChoisi, Michel, Bool):
-                        if True:
-                                Michel = returned_sentence
-                        elif False:
-                                Michel = phraseBOT
+                def score(motChoisi, Bool):
+                        scorePlayer = 0
+                        scoreBot = 0
+                        if Bool:
+                                toggleMot = motChoisi
+                                toggleScore = scorePlayer
+                        else:
+                                toggleMot = motBot
+                                toggleScore = scoreBot
                         i = 0
                         alors = "z"
                         while i < len(Pcat1):
@@ -198,38 +203,38 @@ class SoloGame:
                         l = 0
                         donc = "y"
                         while l < len(Mcat1):
-                                if Mcat1[l] == motChoisi:
+                                if Mcat1[l] == toggleMot:
                                         donc = "d"
                                 l += 1
                         if donc == "y":    
                                 m = 0
                                 while m < len(Mcat2):
-                                        if Mcat2[m] == motChoisi:
+                                        if Mcat2[m] == toggleMot:
                                                 donc == "e"
                                         m += 1        
                         if donc == "y":
                                 n = 0
                                 while n < len(Mcat3):
-                                        if Mcat3[n] == motChoisi:
+                                        if Mcat3[n] == toggleMot:
                                                 donc = "f"
                                         n += 1
                         print(donc)
 
                         valuable = 0
-                        score = valuable + points[motChoisi]
+                        toggleScore = valuable + points[toggleMot]
                         if alors == "a" and donc == "d":
-                                score = score*2
+                                toggleScore = toggleScore*2
                         elif alors == "a" and donc == "f":
-                                score = score*1.5
+                                toggleScore = toggleScore*1.5
                         elif alors == "b" and donc == "e":
-                                score = score*2
+                                toggleScore = toggleScore*2
                         elif alors == "c" and donc == "e":
-                                score = score*2
+                                toggleScore = toggleScore*2
                         elif alors == "c" and donc == "d":
-                                score = score*1.5
+                                toggleScore = toggleScore*1.5
                         elif alors == "c" and donc == "f":
-                                score = score*1.5
-                        print(score)
+                                toggleScore = toggleScore*1.5
+                        print(toggleScore)
 
                 
                 
@@ -300,8 +305,6 @@ class SoloGame:
 ############
 
                 self.show()
-
-      
 
 
 
