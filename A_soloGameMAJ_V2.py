@@ -97,6 +97,7 @@ class SoloGame:
                         time.sleep(1.5)
                         AfficherREP (self,phrase)
                         
+                        
 
                         # result.Game_Result.__init__(windowResult)
                         # self.close()
@@ -260,7 +261,7 @@ class SoloGame:
                                         VictoirePartie(self) 
 
                         return resultScore
-                        
+                
                 def Victory(gagnerPoint):
                         if gagnerPoint :
                                 var.PointUser =+1
@@ -271,6 +272,7 @@ class SoloGame:
                         
                         print("scoreUser", var.PointUser)
                         print("scoreBot", var.PointEnnemy)
+                        
                 
                 def VictoirePartie(self):
                         if var.PointUser < 5 and var.PointEnnemy < 5 :
