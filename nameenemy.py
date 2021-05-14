@@ -1,3 +1,5 @@
+import random
+
 enemy = [
     "Kim Jung Un",
     "Le covid",
@@ -6,3 +8,6 @@ enemy = [
     "Pierre Gueule2bois",
     "Tom Creuse"
 ]
+
+def ChoixNameEnemy():
+    return random.choice(enemy)
