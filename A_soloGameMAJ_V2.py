@@ -241,15 +241,37 @@ class SoloGame:
                         
                         if resultScore == 0:
                                 resultScore = toggleScore
+                                
                         else:
                                 total = resultScore - toggleScore
-                                print(total)                     
+                                print(total)
+                                if total < 0 :
+                                        Victory(False)
+                                        print("victoire du Bot")
+                                        SoloGame.__init__(windowResult)
+                                        self.close()
+                                        
+                                if total > 0 :
+                                        Victory(True)
+                                        print("victoire du Joueur")
+                                        SoloGame.__init__(windowResult)
+                                        self.close()
+                                                 
+                                if total == 0 : #relancer la partie, a ajouter
+                                        print("Egalite")          
                         return resultScore
+                        
+                def Victory(gagnerPoint):
+                        if gagnerPoint :
+                                var.PointUser =+1
+                                print(var.PointUser)
+                        else :
+                                var.PointEnnemy =+ 1
+                                print(var.PointEnnemy)
+                        
+                        print("scoreUser", var.PointUser)
+                        print("scoreBot", var.PointEnnemy)   
 
-
-                
-                
-                
 ##########
                 self.ProfilPic_2 = QtWidgets.QLabel(self)
                 self.ProfilPic_2.setGeometry(QtCore.QRect(30, 390, 40, 40))
