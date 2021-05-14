@@ -276,7 +276,7 @@ class SoloGame:
                 
                 def VictoirePartie(self):
                         if var.PointUser < 5 and var.PointEnnemy < 5 :
-                                SoloGame.__init__(windowResult)
+                                SoloGame.__init__(windowResult) # a modifier, parce que ca entraine la reinitialisation de tout le code surtout le score et ca passe sur une autre fenetre
                                 self.close() 
                         elif var.PointUser == 5 :
                                 print("Player Win")
