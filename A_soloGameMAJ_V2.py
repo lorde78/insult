@@ -248,17 +248,17 @@ class SoloGame:
                                 if total < 0 :
                                         Victory(False)
                                         print("victoire du Bot")
-                                        SoloGame.__init__(windowResult)
-                                        self.close()
+                                        VictoirePartie(self)
                                         
                                 if total > 0 :
                                         Victory(True)
                                         print("victoire du Joueur")
-                                        SoloGame.__init__(windowResult)
-                                        self.close()
+                                        VictoirePartie(self)
                                                  
-                                if total == 0 : #relancer la partie, a ajouter
-                                        print("Egalite")          
+                                if total == 0 :
+                                        print("Egalite")
+                                        VictoirePartie(self) 
+
                         return resultScore
                         
                 def Victory(gagnerPoint):
@@ -270,7 +270,16 @@ class SoloGame:
                                 print(var.PointEnnemy)
                         
                         print("scoreUser", var.PointUser)
-                        print("scoreBot", var.PointEnnemy)   
+                        print("scoreBot", var.PointEnnemy)
+                
+                def VictoirePartie(self):
+                        if var.PointUser < 5 and var.PointEnnemy < 5 :
+                                SoloGame.__init__(windowResult)
+                                self.close() 
+                        elif var.PointUser == 5 :
+                                print("Player Win")
+                        elif var.PointEnnemy == 5 :
+                                print("Bot Win")
 
 ##########
                 self.ProfilPic_2 = QtWidgets.QLabel(self)
