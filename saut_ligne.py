@@ -1,5 +1,3 @@
-phrase = "Hello, pour les nuls, le livre idéal pour la fête de mères"
-
 
 def Phrase_len(var):
     var2=""
@@ -7,11 +5,8 @@ def Phrase_len(var):
     for f in var:
         var2 += f
         i+=1
-        if i == 30:
+        if i > 28 and f == " ":
             var2 +="\n"
-    print(i)
+            i = -10
     print(var2)
-    return i
-
-
-Phrase_len(phrase)
+    return var2
