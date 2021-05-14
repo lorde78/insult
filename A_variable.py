@@ -1,4 +1,5 @@
 import os
+from nameenemy import *
 ### Couleurs :
 degrade ='''qradialgradient(
         radius:3,
@@ -15,7 +16,7 @@ stylePointGame = "QProgressBar{border-radius: 10px;border: 2px solid #2196F3}QPr
 
 PointUser = 0
 
-UserEnnemy = "Ennemy"
+UserEnnemy = ChoixNameEnemy()
 PointEnnemy = 0
 PicEnnemy = path+"/images/LOGO/logo-blue.png"
 styleProfilPic = "border: 3px solid "+degrade+";border-radius: 20px;"
