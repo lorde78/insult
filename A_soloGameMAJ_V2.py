@@ -30,16 +30,17 @@ class SoloGame:
                 Panneau(self)
 ###PROPOSITIONS#################################
                 self.verticalLayoutWidget = QtWidgets.QWidget(self)
-                self.verticalLayoutWidget.setGeometry(QtCore.QRect(19, 130, 321, 251))
+                self.verticalLayoutWidget.setGeometry(QtCore.QRect(20, 130, 320, 270))
                 self.layout_messagerie = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
                 self.layout_messagerie.setContentsMargins(0, 0, 0, 0)
-                self.layout_messagerie.setSpacing(10)
+                self.layout_messagerie.setSpacing(5)
                 self.verticalLayoutWidget.setStyleSheet("Background:transparent")
 
-                def AfficherREP (self,phraseReturn):
+                def AfficherREP_User (self,phraseReturn):
                         print("RepUSER")
                         self.repUser2 = QtWidgets.QLabel(self)
                         self.repUser2.setGeometry(QtCore.QRect(50, 300, 300, 30))
+                        self.repUser2.setMaximumSize(QtCore.QSize(400, 70))
                         self.repUser2.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
                         self.repUser2.setAlignment(QtCore.Qt.AlignCenter)
                         self.repUser2.setText(phraseReturn)
@@ -48,11 +49,12 @@ class SoloGame:
 
                 windowResult = MWindow()    
                 def Clicked(index,self):
-                        print(self.mots[index])
-                        print(self.random_phrase.format(self.mots[index]))
-                        phrase = self.random_phrase.format(self.mots[index])
+
+                        phrase = random_phrase.format(self.mots[index])
+                        phrase = Phrase_len(phrase)
+                        print(phrase)
                         time.sleep(0)
-                        AfficherREP (self,phrase)  
+                        AfficherREP_User(self,phrase)  
 
                 def AfficherBOT (self,phraseBot):
                         print("RepBOT")
@@ -68,58 +70,26 @@ class SoloGame:
                         AfficherBOT(self,phraseBot)
                         return phraseBot
                 
-
-                prop1 = QPushButton(self)
-                prop1.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-                prop1.setMaximumSize(QtCore.QSize(300, 30))
-                prop1.setGeometry(QtCore.QRect(30, 440, 300, 201))
+               
                 word = Constructor.test_choose_word(words)
                 self.mots.append(word)
-                prop1.setText(word)
-                word1 = word
-                prop1.clicked.connect(lambda: Clicked(0,self))
-                prop1.clicked.connect(lambda: score(word1,True))
-                prop1.clicked.connect(lambda: Clicked2(self))
-                prop1.clicked.connect(lambda: score(word1,False))
+                proposition1 = Create_button(self,word,440)
+                proposition1.clicked.connect(lambda: Clicked(0,self))
 
-                prop2 = QPushButton(self)
-                prop2.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-                prop2.setMaximumSize(QtCore.QSize(300, 30))
-                prop2.setGeometry(QtCore.QRect(30, 490, 300, 201))
                 word = Constructor.test_choose_word(words)
                 self.mots.append(word)
-                prop2.setText(word)
-                word2 = word
-                prop2.clicked.connect(lambda: Clicked(1,self))
-                prop2.clicked.connect(lambda: score(word2,True))
-                prop2.clicked.connect(lambda: Clicked2(self))
-                prop2.clicked.connect(lambda: score(word2,False))
+                proposition2 = Create_button(self,word,490)
+                proposition2.clicked.connect(lambda: Clicked(1,self))
 
-                prop3 = QPushButton(self)
-                prop3.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-                prop3.setMaximumSize(QtCore.QSize(300, 30))
-                prop3.setGeometry(QtCore.QRect(30, 540, 300, 201))
                 word = Constructor.test_choose_word(words)
                 self.mots.append(word)
-                prop3.setText(word)
-                word3 = word
-                prop3.clicked.connect(lambda: Clicked(2,self))
-                prop3.clicked.connect(lambda: score(word3,True))
-                prop3.clicked.connect(lambda: Clicked2(self))
-                prop3.clicked.connect(lambda: score(word3,False))
+                proposition3 = Create_button(self,word,540)
+                proposition3.clicked.connect(lambda: Clicked(2,self))
 
-                prop4 = QPushButton(self)
-                prop4.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-                prop4.setMaximumSize(QtCore.QSize(300, 30))
-                prop4.setGeometry(QtCore.QRect(30, 590, 300, 201))
                 word = Constructor.test_choose_word(words)
                 self.mots.append(word)
-                prop4.setText(word)
-                word4 = word
-                prop4.clicked.connect(lambda: Clicked(3,self))
-                prop4.clicked.connect(lambda: score(word4,True))
-                prop4.clicked.connect(lambda: Clicked2(self))
-                prop4.clicked.connect(lambda: score(word4,False))
+                proposition4 = Create_button(self,word,590)
+                proposition4.clicked.connect(lambda: Clicked(3,self))
 
                 print(self.mots)
 
