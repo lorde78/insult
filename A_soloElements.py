@@ -74,12 +74,12 @@ def PhraseToComplete(self,random_phrase):
     self.picBot.setAlignment(QtCore.Qt.AlignCenter)
 ####################################################################
 def Ennemy (self):
-    self.ProfilPic_2 = QtWidgets.QLabel(self)
-    self.ProfilPic_2.setGeometry(QtCore.QRect(30, 390, 40, 40))
-    self.ProfilPic_2.setStyleSheet(var.styleProfilPic)
-    self.ProfilPic_2.setPixmap(QtGui.QPixmap(var.PicEnnemy))
-    self.ProfilPic_2.setScaledContents(True)
-    self.ProfilPic_2.setAlignment(QtCore.Qt.AlignCenter)
+    ProfilPic_2 = QtWidgets.QLabel(self)
+    ProfilPic_2.setGeometry(QtCore.QRect(30, 390, 40, 40))
+    ProfilPic_2.setStyleSheet(var.styleProfilPic)
+    ProfilPic_2.setPixmap(QtGui.QPixmap(var.PicEnnemy))
+    ProfilPic_2.setScaledContents(True)
+    ProfilPic_2.setAlignment(QtCore.Qt.AlignCenter)
     #############
     self.pointEnemy = QtWidgets.QProgressBar(self)
     self.pointEnemy.setGeometry(QtCore.QRect(90, 400, 70, 20))
@@ -107,6 +107,55 @@ def User(self,nameUsername):
     self.UserName.setText(nameUsername)
 
 ####################################################################
+#position : 440 490 540 590
+def Create_button(self,text,position):
+    prop = QPushButton(self)
+    prop.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
+    prop.setMaximumSize(QtCore.QSize(300, 40))
+    prop.setGeometry(QtCore.QRect(30, position, 300, 201))
+    prop.setText(text)
+
+    return prop
+
+# prop2 = QPushButton(self)
+# prop2.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
+# prop2.setMaximumSize(QtCore.QSize(300, 30))
+# prop2.setGeometry(QtCore.QRect(30, 490, 300, 201))
+# word = Constructor.test_choose_word(words)
+# self.mots.append(word)
+# prop2.setText(word)
+# word2 = word
+# prop2.clicked.connect(lambda: Clicked(1,self))
+# prop2.clicked.connect(lambda: score(word2,True))
+# prop2.clicked.connect(lambda: Clicked2(self))
+# prop2.clicked.connect(lambda: score(word2,False))
+
+# prop3 = QPushButton(self)
+# prop3.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
+# prop3.setMaximumSize(QtCore.QSize(300, 30))
+# prop3.setGeometry(QtCore.QRect(30, 540, 300, 201))
+# word = Constructor.test_choose_word(words)
+# self.mots.append(word)
+# prop3.setText(word)
+# word3 = word
+# prop3.clicked.connect(lambda: Clicked(2,self))
+# prop3.clicked.connect(lambda: score(word3,True))
+# prop3.clicked.connect(lambda: Clicked2(self))
+# prop3.clicked.connect(lambda: score(word3,False))
+
+# prop4 = QPushButton(self)
+# prop4.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
+# prop4.setMaximumSize(QtCore.QSize(300, 30))
+# prop4.setGeometry(QtCore.QRect(30, 590, 300, 201))
+# word = Constructor.test_choose_word(words)
+# self.mots.append(word)
+# prop4.setText(word)
+# word4 = word
+# prop4.clicked.connect(lambda: Clicked(3,self))
+# prop4.clicked.connect(lambda: score(word4,True))
+# prop4.clicked.connect(lambda: Clicked2(self))
+# prop4.clicked.connect(lambda: score(word4,False))
+
 
 
 

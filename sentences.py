@@ -1,7 +1,6 @@
 # We use he format method for each sentences because it allows us to set  where the selected word will be added
 sentences = [format("{} c’est une bonne personne mais pas du tout"),
              format("Demande à ton médecin si {} est bon pour toi"),
-             format("De bois pour oublier {}"),
              format("Regarder {} permet de me calmer"),
              format("Le cadeau parfait pour une femme qui a déjà tout {}"),
              format("L’Egypte a les pyramides et la France {}"),
