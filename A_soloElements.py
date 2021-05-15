@@ -64,6 +64,7 @@ def PhraseToComplete(self,random_phrase):
     self.Sentence_.setMaximumSize(QtCore.QSize(300, 100))
     self.Sentence_.setStyleSheet("background-color: "+var.degrade+"; border: 4px solid white; border-radius: 5px;color: white;")
     self.Sentence_.setAlignment(QtCore.Qt.AlignCenter)
+    
     self.Sentence_.setText(random_phrase)
 
     self.picBot = QtWidgets.QLabel(self)
@@ -106,7 +107,21 @@ def User(self,nameUsername):
     self.UserName.setAlignment(QtCore.Qt.AlignCenter)
     self.UserName.setText(nameUsername)
 
-####################################################################
+###Messagerie#################################################################
+
+def Messagerie(self):
+    self.verticalLayoutWidget = QtWidgets.QWidget(self)
+    self.verticalLayoutWidget.setGeometry(QtCore.QRect(20, 130, 320, 270))
+    self.layout_messagerie = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+    self.layout_messagerie.setContentsMargins(0, 0, 0, 0)
+    self.layout_messagerie.setSpacing(5)
+    self.verticalLayoutWidget.setStyleSheet("Background:transparent")
+
+    return self.verticalLayoutWidget
+
+
+
+###########################@
 #position : 440 490 540 590
 def Create_button(self,text,position):
     prop = QPushButton(self)
@@ -117,46 +132,106 @@ def Create_button(self,text,position):
 
     return prop
 
-# prop2 = QPushButton(self)
-# prop2.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-# prop2.setMaximumSize(QtCore.QSize(300, 30))
-# prop2.setGeometry(QtCore.QRect(30, 490, 300, 201))
-# word = Constructor.test_choose_word(words)
-# self.mots.append(word)
-# prop2.setText(word)
-# word2 = word
-# prop2.clicked.connect(lambda: Clicked(1,self))
-# prop2.clicked.connect(lambda: score(word2,True))
-# prop2.clicked.connect(lambda: Clicked2(self))
-# prop2.clicked.connect(lambda: score(word2,False))
 
-# prop3 = QPushButton(self)
-# prop3.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-# prop3.setMaximumSize(QtCore.QSize(300, 30))
-# prop3.setGeometry(QtCore.QRect(30, 540, 300, 201))
-# word = Constructor.test_choose_word(words)
-# self.mots.append(word)
-# prop3.setText(word)
-# word3 = word
-# prop3.clicked.connect(lambda: Clicked(2,self))
-# prop3.clicked.connect(lambda: score(word3,True))
-# prop3.clicked.connect(lambda: Clicked2(self))
-# prop3.clicked.connect(lambda: score(word3,False))
+def AfficherREP_ (self,phraseReturn):
 
-# prop4 = QPushButton(self)
-# prop4.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-# prop4.setMaximumSize(QtCore.QSize(300, 30))
-# prop4.setGeometry(QtCore.QRect(30, 590, 300, 201))
-# word = Constructor.test_choose_word(words)
-# self.mots.append(word)
-# prop4.setText(word)
-# word4 = word
-# prop4.clicked.connect(lambda: Clicked(3,self))
-# prop4.clicked.connect(lambda: score(word4,True))
-# prop4.clicked.connect(lambda: Clicked2(self))
-# prop4.clicked.connect(lambda: score(word4,False))
+    rep = QPushButton(self)
+    rep.setGeometry(QtCore.QRect(50, 300, 300, 30))
+    rep.setMaximumSize(QtCore.QSize(400, 70))
+    rep.setText(phraseReturn)
+    # if User == True:
+    #     rep.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
+    # else:
+    rep.setStyleSheet("background-color: white; border: 1px solid black; border-radius: 15px;color: black;")
+    self.layout_messagerie.addWidget(rep)
 
+    return rep
 
+####SCORE###############################################################
+from constructor_class import *
+from sentences import sentences
+from words import words
+from points import *
 
+def Score(returned_sentence):
 
+    i = 0
+    alors = "z"
+    toggleMot = 0
+    toggleScore = 0
 
+    while i < len(Pcat1):
+            if Pcat1[i] == returned_sentence:
+                    alors = "a"
+            i += 1
+    if alors == "z":
+            j = 0
+            while j < len(Pcat2):
+                    if Pcat2[j] == returned_sentence:
+                            alors = "b"
+                    j += 1
+    if alors == "z":
+            k = 0
+            while k < len(Pcat3):
+                    if Pcat3[k] == returned_sentence:
+                            alors = "c"
+                    k += 1
+    print(alors)
+    l = 0
+    donc = "y"
+    while l < len(Mcat1):
+            if Mcat1[l] == toggleMot:
+                    donc = "d"
+            l += 1
+    if donc == "y":    
+            m = 0
+            while m < len(Mcat2):
+                    if Mcat2[m] == toggleMot:
+                            donc == "e"
+                    m += 1        
+    if donc == "y":
+            n = 0
+            while n < len(Mcat3):
+                    if Mcat3[n] == toggleMot:
+                            donc = "f"
+                    n += 1
+    print(donc)
+
+    valuable = 0
+    toggleScore = valuable + points[toggleMot]
+    if alors == "a" and donc == "d":
+            toggleScore = toggleScore*2
+    elif alors == "a" and donc == "f":
+            toggleScore = toggleScore*1.5
+    elif alors == "b" and donc == "e":
+            toggleScore = toggleScore*2
+    elif alors == "c" and donc == "e":
+            toggleScore = toggleScore*2
+    elif alors == "c" and donc == "d":
+            toggleScore = toggleScore*1.5
+    elif alors == "c" and donc == "f":
+            toggleScore = toggleScore*1.5
+    print(toggleScore)
+    
+   
+    resultScore = toggleScore
+            
+    total = resultScore - toggleScore
+    print(total)
+    if total < 0 :
+     
+            print("victoire du Bot")
+      
+    if total > 0 :
+           
+            print("victoire du Joueur")
+         
+    if total == 0 :
+            print("Egalite")
+         
+
+    print("Score:"+resultScore)
+    return resultScore
+
+def ScoreBYNassim(mot):
+    print(mot)
