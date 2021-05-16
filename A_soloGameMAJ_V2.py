@@ -145,7 +145,10 @@ class SoloGame:
                 self.show()
 
 def NewGame(self):
+        print(var.PointUser)
+        print(var.PointEnnemy)
         self.close()
-        window1 = MWindow()   
+        window1 = MWindow()
+        
         SoloGame.__init__(window1)
 
