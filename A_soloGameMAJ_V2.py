@@ -35,7 +35,6 @@ class SoloGame:
                 messagerie = Messagerie(self)
                 
                 
-                
                 def Clicked_ResultUser(who):
                         
                         if who == "bot":
@@ -52,17 +51,20 @@ class SoloGame:
                   
                         self.repUser.close()
                         self.repBot.close()
-                        # self.proposition1.setVisible(True)
-                        # self.proposition2.setVisible(True)
-                        # self.proposition3.setVisible(True)
-                        # self.proposition4.setVisible(True)
-                        
-                        self.mots = []
+                        self.proposition1.setVisible(True)
+                        self.proposition2.setVisible(True)
+                        self.proposition3.setVisible(True)
+                        self.proposition4.setVisible(True)
 
-                        nouv_propositons = Propositions(self)
-                        
+                        random_phrase2 = Constructor.random_sentence(sentences)
+                        random_phrase2 = Phrase_len(random_phrase2)
+                        PhraseToComplete(self,random_phrase2)
 
-           
+                        liste2 = []
+                        word2 = Constructor.test_choose_word(words)
+                        Propositions(self,liste2,word2)
+                        
+                        NewGame(self)
 
                 def Clicked(index,self):
 
@@ -79,37 +81,39 @@ class SoloGame:
                         self.repBot = AfficherREP_(self,phraseBot)
                         self.repBot.clicked.connect(lambda: Clicked_ResultUser("bot"))
 
-                        self.proposition1.close()
-                        self.proposition2.close()
-                        self.proposition3.close()
-                        self.proposition4.close()
+                        self.proposition1.setVisible(False)
+                        self.proposition2.setVisible(False)
+                        self.proposition3.setVisible(False)
+                        self.proposition4.setVisible(False)
+
+                        self.Sentence_.close()
 
                         
-
-                        
-                def Propositions(self):
-                        word = Constructor.test_choose_word(words)
-                        self.mots.append(word)
+                def Propositions(self,liste,word):
+                    
+                        liste.append(word)
                         self.proposition1 = Create_button(self,word,440)
                         self.proposition1.clicked.connect(lambda: Clicked(0,self))
                 
 
                         word = Constructor.test_choose_word(words)
-                        self.mots.append(word)
+                        liste.append(word)
                         self.proposition2 = Create_button(self,word,490)
                         self.proposition2.clicked.connect(lambda: Clicked(1,self))
 
                         word = Constructor.test_choose_word(words)
-                        self.mots.append(word)
+                        liste.append(word)
                         self.proposition3 = Create_button(self,word,540)
                         self.proposition3.clicked.connect(lambda: Clicked(2,self))
 
                         word = Constructor.test_choose_word(words)
-                        self.mots.append(word)
+                        liste.append(word)
                         self.proposition4 = Create_button(self,word,590)
                         self.proposition4.clicked.connect(lambda: Clicked(3,self))
-                
-                Propositions(self)
+
+                word1 = Constructor.test_choose_word(words)
+
+                Propositions(self,self.mots,word1)
             
 
                 print(self.mots)
@@ -126,7 +130,6 @@ class SoloGame:
                                 print("Bot Win")
 
             
-
 #PHRASE A COMPLETER###############################################################
                 random_phrase = Constructor.random_sentence(sentences)
                 random_phrase = Phrase_len(random_phrase)
@@ -140,5 +143,9 @@ class SoloGame:
                 # Logo(self)
 ############
                 self.show()
-resultScore = 0
+
+def NewGame(self):
+        self.close()
+        window1 = MWindow()   
+        SoloGame.__init__(window1)
 

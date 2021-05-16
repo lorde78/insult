@@ -58,21 +58,23 @@ def Logo(self):
     self.titreLogo_transp.setPixmap(QtGui.QPixmap(var.path+"/images/LOGO/trans.png"))
     self.titreLogo_transp.setAlignment(QtCore.Qt.AlignCenter)
 
-def PhraseToComplete(self,random_phrase):
-    self.Sentence_ = QtWidgets.QLabel(self)
-    self.Sentence_.setGeometry(QtCore.QRect(80, 60, 230, 80))
-    self.Sentence_.setMaximumSize(QtCore.QSize(300, 100))
-    self.Sentence_.setStyleSheet("background-color: "+var.degrade+"; border: 3px solid white; border-radius: 15px;color: white;")
-    self.Sentence_.setAlignment(QtCore.Qt.AlignCenter)
-    
-    self.Sentence_.setText(random_phrase)
+def PhraseToComplete(self,text):
+        self.Sentence_ = QtWidgets.QLabel(self)
+        self.Sentence_.setGeometry(QtCore.QRect(80, 60, 230, 80))
+        self.Sentence_.setMaximumSize(QtCore.QSize(300, 100))
+        self.Sentence_.setStyleSheet("background-color: "+var.degrade+"; border: 3px solid white; border-radius: 15px;color: white;")
+        self.Sentence_.setAlignment(QtCore.Qt.AlignCenter)
 
-    self.picBot = QtWidgets.QLabel(self)
-    self.picBot.setGeometry(QtCore.QRect(30, 70, 51, 51))
-    self.picBot.setStyleSheet("background:transparent;")
-    self.picBot.setPixmap(QtGui.QPixmap(var.path+"/images/Autre/Botpic.png"))
-    self.picBot.setScaledContents(False)
-    self.picBot.setAlignment(QtCore.Qt.AlignCenter)
+        self.Sentence_.setText(text)
+
+        self.picBot = QtWidgets.QLabel(self)
+        self.picBot.setGeometry(QtCore.QRect(30, 70, 51, 51))
+        self.picBot.setStyleSheet("background:transparent;")
+        self.picBot.setPixmap(QtGui.QPixmap(var.path+"/images/Autre/Botpic.png"))
+        self.picBot.setScaledContents(False)
+        self.picBot.setAlignment(QtCore.Qt.AlignCenter)
+
+        return self.Sentence_
 ####################################################################
 def Ennemy (self):
     ProfilPic_2 = QtWidgets.QLabel(self)
