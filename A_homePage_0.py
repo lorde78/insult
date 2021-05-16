@@ -1,10 +1,12 @@
 from A_askingName_0 import AskingNamePage
+from A_about import AskingNamePage
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
     ##Variables
 import A_variable as var
 from A_askingName_0 import *
+from A_about import *
 from A_Mwindow import MWindow
     
 class HomePage():
@@ -53,6 +55,7 @@ def Add_homeButtons(self):
         self.pushButtonAbout.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.pushButtonAbout.setStyleSheet(var.styleButtonHome)
         self.pushButtonAbout.setText("ABOUT")
+        self.pushButtonAbout.clicked.connect(lambda: AfficherAboutPage(self))
 
         self.layout_frame1.addWidget(self.pushButtonAbout)
 
@@ -85,6 +88,11 @@ window = MWindow()
 def AfficherAskingPage(self):
         self.close()
         AskingNamePage.__init__(window)
+
+def AfficherAboutPage(self):
+        self.close()
+        AskingNamePage.__init__(window)
+
     
 
 
