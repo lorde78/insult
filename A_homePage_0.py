@@ -1,5 +1,5 @@
 from A_askingName_0 import AskingNamePage
-from A_about import AskingNamePage
+from A_about import AskingaBoutPage
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
@@ -91,7 +91,7 @@ def AfficherAskingPage(self):
 
 def AfficherAboutPage(self):
         self.close()
-        AskingNamePage.__init__(window)
+        AskingaBoutPage.__init__(window)
 
     
 

@@ -5,12 +5,11 @@ from PyQt5.QtCore import Qt
 import A_variable as var
 styleButtonHome = "QPushButton {background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px; color: "+var.degrade+";font-weight:bold}""QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}"
 
-from A_soloGameMAJ_V2 import *
-from A_Mwindow import MWindow 
-
 import A_homePage_0  as home
 
-class AskingNamePage():
+#import A_about as home
+
+class AskingaBoutPage():
     
     def __init__ (self):
         self.setStyleSheet("background-color: white")
@@ -30,14 +29,14 @@ class AskingNamePage():
         self.show()
 
 def afficherTextAbout(self):
-    self.Sentence_ = QtWidgets.QLabel(self)
-    self.Sentence_.setGeometry(QtCore.QRect(60, 280, 230, 80))
-    self.Sentence_.setMaximumSize(QtCore.QSize(300, 100))
-    self.Sentence_.setAutoFillBackground(False)
-    self.Sentence_.setStyleSheet("background-color: "+var.degrade+"; border: 4px solid white; border-radius: 5px;color: white;")
-    self.Sentence_.setAlignment(QtCore.Qt.AlignCenter)
-    self.Sentence_.setText("Bienvenue sur Cannibale Dungo")
-
+    self.okidoki = QtWidgets.QLabel(self)
+    self.okidoki.setGeometry(QtCore.QRect(60, 280, 230, 80))
+    self.okidoki.setMaximumSize(QtCore.QSize(300, 100))
+    self.okidoki.setAutoFillBackground(False)
+    self.okidoki.setStyleSheet("background-color: "+var.degrade+"; border: 4px solid white; border-radius: 5px;color: white;")
+    self.okidoki.setAlignment(QtCore.Qt.AlignCenter)
+    self.okidoki.setText("Bienvenue sur Cannibale Dungo")
+ 
 
     
 
