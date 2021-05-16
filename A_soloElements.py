@@ -45,11 +45,11 @@ def Home_button(self,returnhome):
     self.pushButton.clicked.connect(self.close)
 
 def Panneau (self):
-    panneauInf = QtWidgets.QFrame(self)
-    panneauInf.setGeometry(QtCore.QRect(0, 410, 360, 250))
-    panneauInf.setStyleSheet("QFrame{background-color: "+var.degrade+"; border-radius: 10px;}")
-    panneauInf.setFrameShape(QtWidgets.QFrame.StyledPanel)
-    panneauInf.setFrameShadow(QtWidgets.QFrame.Raised)
+    self.panneauInf = QtWidgets.QFrame(self)
+    self.panneauInf.setGeometry(QtCore.QRect(0, 410, 360, 250))
+    self.panneauInf.setStyleSheet("QFrame{background-color: "+var.degrade+"; border-radius: 10px;}")
+    self.panneauInf.setFrameShape(QtWidgets.QFrame.StyledPanel)
+    self.panneauInf.setFrameShadow(QtWidgets.QFrame.Raised)
 
 def Logo(self):
     self.titreLogo_transp = QtWidgets.QLabel(self)
@@ -60,9 +60,9 @@ def Logo(self):
 
 def PhraseToComplete(self,random_phrase):
     self.Sentence_ = QtWidgets.QLabel(self)
-    self.Sentence_.setGeometry(QtCore.QRect(80, 70, 230, 80))
+    self.Sentence_.setGeometry(QtCore.QRect(80, 60, 230, 80))
     self.Sentence_.setMaximumSize(QtCore.QSize(300, 100))
-    self.Sentence_.setStyleSheet("background-color: "+var.degrade+"; border: 4px solid white; border-radius: 5px;color: white;")
+    self.Sentence_.setStyleSheet("background-color: "+var.degrade+"; border: 3px solid white; border-radius: 15px;color: white;")
     self.Sentence_.setAlignment(QtCore.Qt.AlignCenter)
     
     self.Sentence_.setText(random_phrase)
@@ -86,7 +86,6 @@ def Ennemy (self):
     self.pointEnemy.setGeometry(QtCore.QRect(90, 400, 70, 20))
     self.pointEnemy.setStyleSheet(var.stylePointGame)
     self.pointEnemy.setMaximum(5)
-    self.pointEnemy.setValue(var.PointEnnemy)
     self.pointEnemy.setTextVisible(False)
 
 def User(self,nameUsername):
@@ -94,7 +93,6 @@ def User(self,nameUsername):
     self.pointUser.setGeometry(QtCore.QRect(180, 400, 70, 20))
     self.pointUser.setStyleSheet(var.stylePointGame)
     self.pointUser.setMaximum(5)
-    self.pointUser.setValue(var.PointUser)
     self.pointUser.setTextVisible(False)
 
     self.UserName = QtWidgets.QLabel(self)
@@ -121,28 +119,24 @@ def Messagerie(self):
 
 
 
-###########################@
+###PROPOSITIONS########################@
 #position : 440 490 540 590
 def Create_button(self,text,position):
-    prop = QPushButton(self)
-    prop.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-    prop.setMaximumSize(QtCore.QSize(300, 40))
-    prop.setGeometry(QtCore.QRect(30, position, 300, 201))
-    prop.setText(text)
+        prop = QPushButton(self)
+        prop.setStyleSheet("QPushButton{background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid white; border-radius: 15px; color: white}")
+        prop.setMaximumSize(QtCore.QSize(300, 40))
+        prop.setGeometry(QtCore.QRect(30, position, 300, 201))
+        prop.setText(text)
 
-    return prop
+        return prop
 
 
 def AfficherREP_ (self,phraseReturn):
 
     rep = QPushButton(self)
-    rep.setGeometry(QtCore.QRect(50, 300, 300, 30))
-    rep.setMaximumSize(QtCore.QSize(400, 70))
+    rep.setMaximumSize(QtCore.QSize(500, 70))
     rep.setText(phraseReturn)
-    # if User == True:
-    #     rep.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
-    # else:
-    rep.setStyleSheet("background-color: white; border: 1px solid black; border-radius: 15px;color: black;")
+    rep.setStyleSheet("QPushButton{background-color: white; border: 1px solid black; border-radius: 15px;color:black}QPushButton:pressed {background-color: green; border-radius: 15px; color: white; border: 1px solid white; }")
     self.layout_messagerie.addWidget(rep)
 
     return rep
@@ -176,7 +170,6 @@ def Score(returned_sentence):
                     if Pcat3[k] == returned_sentence:
                             alors = "c"
                     k += 1
-    print(alors)
     l = 0
     donc = "y"
     while l < len(Mcat1):
@@ -195,7 +188,7 @@ def Score(returned_sentence):
                     if Mcat3[n] == toggleMot:
                             donc = "f"
                     n += 1
-    print(donc)
+
 
     valuable = 0
     toggleScore = valuable + points[toggleMot]
@@ -211,13 +204,13 @@ def Score(returned_sentence):
             toggleScore = toggleScore*1.5
     elif alors == "c" and donc == "f":
             toggleScore = toggleScore*1.5
-    print(toggleScore)
+
     
    
     resultScore = toggleScore
             
     total = resultScore - toggleScore
-    print(total)
+
     if total < 0 :
      
             print("victoire du Bot")
@@ -230,8 +223,6 @@ def Score(returned_sentence):
             print("Egalite")
          
 
-    print("Score:"+resultScore)
+
     return resultScore
 
-def ScoreBYNassim(mot):
-    print(mot)

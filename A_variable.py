@@ -19,7 +19,7 @@ PointUser = 0
 UserEnnemy = ChoixNameEnemy()
 PointEnnemy = 0
 PicEnnemy = path+"/images/LOGO/logo-blue.png"
-styleProfilPic = "border: 3px solid "+degrade+";border-radius: 20px;"
+styleProfilPic = "border: 2px solid "+degrade+";border-radius: 20px;"
 
 sentenceHole = "Hello___!!"
 

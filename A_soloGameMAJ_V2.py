@@ -17,6 +17,7 @@ from saut_ligne import Phrase_len
 
 class SoloGame:
 
+
         def __init__(self):
 
                 self.random_phrase = None
@@ -28,75 +29,91 @@ class SoloGame:
                 returnhome = ask.ReturnHome
                 Home_button(self,returnhome)
 #PARTIE INF###############################################################
-                Panneau(self)
+                panneauBleu = Panneau(self)
+
 ###PROPOSITIONS#################################
                 messagerie = Messagerie(self)
                 
-                # messagerie.close()
                 
+                
+                def Clicked_ResultUser(who):
+                        
+                        if who == "bot":
+                                print("Click BOT ")
+                                var.PointEnnemy += 1
+                                self.pointEnemy.setValue(var.PointEnnemy)
 
-                def Clicked_ResultUser(phrase):
-                        print("Click USER "+phrase)
 
-                def Clicked_ResultBot():
-                        print("Click BOT")
+                        elif who == "user":
+                                print("Click User")
+                                var.PointUser += 1
+                
+                                self.pointUser.setValue(var.PointUser)
+                  
+                        self.repUser.close()
+                        self.repBot.close()
+                        # self.proposition1.setVisible(True)
+                        # self.proposition2.setVisible(True)
+                        # self.proposition3.setVisible(True)
+                        # self.proposition4.setVisible(True)
+                        
+                        self.mots = []
 
+                        nouv_propositons = Propositions(self)
+                        
+
+           
 
                 def Clicked(index,self):
 
+                        ##User
                         phrase = random_phrase.format(self.mots[index])
                         phrase = Phrase_len(phrase)
-                        print(phrase)
-                        repUser = AfficherREP_(self,phrase)
-                        repUser.clicked.connect(lambda: Clicked_ResultUser("Hello"))
-                        
-                def Clicked_BOT():
+                        self.repUser = AfficherREP_(self,phrase)
+                        self.repUser.clicked.connect(lambda: Clicked_ResultUser("user"))
+                        print(self.mots)
+                       
                         ##Bot
                         phraseBot = random_phrase.format(random.choice(words))
                         phraseBot = Phrase_len(phraseBot)
-                        repBot = AfficherREP_(self,phraseBot)
-                        repBot.clicked.connect(lambda: Clicked_ResultBot())
+                        self.repBot = AfficherREP_(self,phraseBot)
+                        self.repBot.clicked.connect(lambda: Clicked_ResultUser("bot"))
+
+                        self.proposition1.close()
+                        self.proposition2.close()
+                        self.proposition3.close()
+                        self.proposition4.close()
 
                         
 
+                        
+                def Propositions(self):
+                        word = Constructor.test_choose_word(words)
+                        self.mots.append(word)
+                        self.proposition1 = Create_button(self,word,440)
+                        self.proposition1.clicked.connect(lambda: Clicked(0,self))
+                
 
-               
-                word = Constructor.test_choose_word(words)
-                self.mots.append(word)
-                proposition1 = Create_button(self,word,440)
-                proposition1.clicked.connect(lambda: Clicked(0,self))
-                proposition1.clicked.connect(lambda: Clicked_BOT())
+                        word = Constructor.test_choose_word(words)
+                        self.mots.append(word)
+                        self.proposition2 = Create_button(self,word,490)
+                        self.proposition2.clicked.connect(lambda: Clicked(1,self))
 
-                word = Constructor.test_choose_word(words)
-                self.mots.append(word)
-                proposition2 = Create_button(self,word,490)
-                proposition2.clicked.connect(lambda: Clicked(1,self))
+                        word = Constructor.test_choose_word(words)
+                        self.mots.append(word)
+                        self.proposition3 = Create_button(self,word,540)
+                        self.proposition3.clicked.connect(lambda: Clicked(2,self))
 
-                word = Constructor.test_choose_word(words)
-                self.mots.append(word)
-                proposition3 = Create_button(self,word,540)
-                proposition3.clicked.connect(lambda: Clicked(2,self))
-
-                word = Constructor.test_choose_word(words)
-                self.mots.append(word)
-                proposition4 = Create_button(self,word,590)
-                proposition4.clicked.connect(lambda: Clicked(3,self))
+                        word = Constructor.test_choose_word(words)
+                        self.mots.append(word)
+                        self.proposition4 = Create_button(self,word,590)
+                        self.proposition4.clicked.connect(lambda: Clicked(3,self))
+                
+                Propositions(self)
+            
 
                 print(self.mots)
 
-                motlol = "hello"
-                ScoreBYNassim(motlol)
-
-                def Victory(gagnerPoint):
-                        if gagnerPoint :
-                                var.PointUser =+1
-                                print(var.PointUser)
-                        else :
-                                var.PointEnnemy =+ 1
-                                print(var.PointEnnemy)
-                        
-                        print("scoreUser", var.PointUser)
-                        print("scoreBot", var.PointEnnemy)
                         
                 
                 def VictoirePartie(self):
@@ -120,7 +137,7 @@ class SoloGame:
                 username = ask.Username
                 User(self,username)
 #LOGO###########
-                Logo(self)
+                # Logo(self)
 ############
                 self.show()
 resultScore = 0
