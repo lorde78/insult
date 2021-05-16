@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 import A_variable as var
 import A_askingName_0 as ask
+from A_about import *
 from constructor_class import *
 from sentences import sentences
 from words import words
