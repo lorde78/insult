@@ -127,9 +127,3 @@ sentence = (Constructor.random_sentence(sentences))
 motBot = (Bot.bot_word(words))
 
 
-#print(returned_word)
-#print(returned_sentence)
-#print(Bot.bot_sentence())
-#print(Constructor.random_sentence(sentences).format(Constructor.test_choose_word(words)))
-#print(Constructor.choose_word(Constructor.test_choose_word(words)))
-#print(sentence.format(Constructor.test_choose_word(words)))
