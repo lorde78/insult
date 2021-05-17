@@ -19,6 +19,7 @@ class SoloGame:
 
 
         def __init__(self):
+                self.end = False
 
                 self.random_phrase = None
                 self.mots = []
@@ -63,7 +64,7 @@ class SoloGame:
                         liste2 = []
                         word2 = Constructor.test_choose_word(words)
                         Propositions(self,liste2,word2)
-                        
+
                         NewGame(self)
                         
                 def Clicked(index,self):
@@ -114,15 +115,18 @@ class SoloGame:
                 Propositions(self,self.mots,word1)
 
                 def VictoirePartie(self,value):
-                        if var.PointUser < value and var.PointEnnemy < value:
-                                #MESSAGE
-                                self.close() 
-                        elif var.PointUser == value :
-                                print("Player Win")
+                        if var.PointUser == value :
+                                print("PLAYER WIN")
+                                self.close()
+                                self.end = True
+                                print(self.end)
                         elif var.PointEnnemy == value :
-                                print("Bot Win")
+                                print("BOT WIN")
+                                self.close()
+                                self.end = True
+                                print(self.end)
 
-                VictoirePartie(self,5)
+                VictoirePartie(self,3)
                 # La liste de mots n'étant pas assez longue la partie va s'arrêter en cours de route, nous vous conseillons de modifier le paramètre VictoirePartie(self,3)
 
 #PHRASE A COMPLETER###############################################################
@@ -149,6 +153,6 @@ def NewGame(self):
 
         self.close()
         window1 = MWindow()
-        
-        SoloGame.__init__(window1)
+        if self.end == False:
+                SoloGame.__init__(window1)
 

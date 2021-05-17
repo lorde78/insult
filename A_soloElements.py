@@ -87,7 +87,7 @@ def Ennemy (self):
     self.pointEnemy = QtWidgets.QProgressBar(self)
     self.pointEnemy.setGeometry(QtCore.QRect(90, 400, 70, 20))
     self.pointEnemy.setStyleSheet(var.stylePointGame)
-    self.pointEnemy.setMaximum(5)
+    self.pointEnemy.setMaximum(3)
     self.pointEnemy.setTextVisible(False)
 
     self.pointEnemy.setValue(var.PointEnnemy)
@@ -96,7 +96,7 @@ def User(self,nameUsername):
     self.pointUser = QtWidgets.QProgressBar(self)
     self.pointUser.setGeometry(QtCore.QRect(180, 400, 70, 20))
     self.pointUser.setStyleSheet(var.stylePointGame)
-    self.pointUser.setMaximum(5)
+    self.pointUser.setMaximum(3)
     self.pointUser.setTextVisible(False)
 
     self.pointUser.setValue(var.PointUser)

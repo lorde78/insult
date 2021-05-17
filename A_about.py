@@ -33,9 +33,9 @@ def afficherTextAbout(self):
     self.okidoki.setGeometry(QtCore.QRect(60, 280, 230, 80))
     self.okidoki.setMaximumSize(QtCore.QSize(300, 100))
     self.okidoki.setAutoFillBackground(False)
-    self.okidoki.setStyleSheet("background-color: "+var.degrade+"; border: 4px solid white; border-radius: 5px;color: white;")
+    self.okidoki.setStyleSheet("background-color: "+var.degrade+"; border: 2px solid white; border-radius: 10px;color: white;")
     self.okidoki.setAlignment(QtCore.Qt.AlignCenter)
-    self.okidoki.setText("Bienvenue sur Cannibale Dungo")
+    self.okidoki.setText("Bienvenue sur Cannibale Dungo© \n Jeu crée par Hugo, Basil, Wylohn et Nassim")
  
 
     
