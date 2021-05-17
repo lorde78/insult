@@ -1,3 +1,8 @@
+
+
+######## LANCER LE JEU ########
+
+
 ## Imports
 import sys
 from PyQt5.QtWidgets import * 
@@ -13,3 +18,5 @@ loadPage.LoadPage(window)
 
 
 sys.exit(app.exec_())
+
+
