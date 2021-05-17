@@ -126,13 +126,14 @@ class SoloGame:
                 # La liste de mots n'étant pas assez longue la partie va s'arrêter en cours de route, nous vous conseillons de modifier le paramètre VictoirePartie(self,3)
 
 #PHRASE A COMPLETER###############################################################
-                self.Sentence_ = QtWidgets.QLabel(self)
-                self.Sentence_.setGeometry(QtCore.QRect(80, 70, 230, 80))
-                self.Sentence_.setMaximumSize(QtCore.QSize(300, 100))
-                self.Sentence_.setStyleSheet("background-color: "+var.degrade+"; border: 4px solid white; border-radius: 5px;color: white;")
-                self.Sentence_.setAlignment(QtCore.Qt.AlignCenter)
-                self.random_phrase = Constructor.random_sentence(sentences)
-                self.Sentence_.setText(self.random_phrase)
+
+
+                random_phrase = Constructor.random_sentence(sentences)
+                random_phrase = Phrase_len(random_phrase)
+                PhraseToComplete(self,random_phrase)
+                
+
+             
 #Enemy#############################
                 Ennemy(self)
 #POINTS / USERNAME###############################################################
@@ -143,8 +144,9 @@ class SoloGame:
 ############
                 self.show()
 
+
 def NewGame(self):
-        
+
         self.close()
         window1 = MWindow()
         
