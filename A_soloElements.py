@@ -90,12 +90,16 @@ def Ennemy (self):
     self.pointEnemy.setMaximum(5)
     self.pointEnemy.setTextVisible(False)
 
+    self.pointEnemy.setValue(var.PointEnnemy)
+
 def User(self,nameUsername):
     self.pointUser = QtWidgets.QProgressBar(self)
     self.pointUser.setGeometry(QtCore.QRect(180, 400, 70, 20))
     self.pointUser.setStyleSheet(var.stylePointGame)
     self.pointUser.setMaximum(5)
     self.pointUser.setTextVisible(False)
+
+    self.pointUser.setValue(var.PointUser)
 
     self.UserName = QtWidgets.QLabel(self)
     self.UserName.setGeometry(QtCore.QRect(259, 396, 95, 27))

@@ -34,17 +34,16 @@ class SoloGame:
 ###PROPOSITIONS#################################
                 messagerie = Messagerie(self)
                 
-                
                 def Clicked_ResultUser(who):
                         
                         if who == "bot":
-                                print("Click BOT ")
+                          
                                 var.PointEnnemy += 1
                                 self.pointEnemy.setValue(var.PointEnnemy)
 
 
                         elif who == "user":
-                                print("Click User")
+                              
                                 var.PointUser += 1
                 
                                 self.pointUser.setValue(var.PointUser)
@@ -73,7 +72,6 @@ class SoloGame:
                         phrase = Phrase_len(phrase)
                         self.repUser = AfficherREP_(self,phrase)
                         self.repUser.clicked.connect(lambda: Clicked_ResultUser("user"))
-                        print(self.mots)
                        
                         ##Bot
                         phraseBot = random_phrase.format(random.choice(words))
@@ -114,21 +112,17 @@ class SoloGame:
                 word1 = Constructor.test_choose_word(words)
 
                 Propositions(self,self.mots,word1)
-            
 
-                print(self.mots)
-
-                        
-                
-                def VictoirePartie(self):
-                        if var.PointUser < 5 and var.PointEnnemy < 5 :
-                                # SoloGame.__init__(windowResult) # a modifier, parce que ca entraine la reinitialisation de tout le code surtout le score et ca passe sur une autre fenetre
+                def VictoirePartie(self,value):
+                        if var.PointUser < value and var.PointEnnemy < value:
+                                #MESSAGE
                                 self.close() 
-                        elif var.PointUser == 5 :
+                        elif var.PointUser == value :
                                 print("Player Win")
-                        elif var.PointEnnemy == 5 :
+                        elif var.PointEnnemy == value :
                                 print("Bot Win")
 
+                VictoirePartie(self,5)
             
 #PHRASE A COMPLETER###############################################################
                 random_phrase = Constructor.random_sentence(sentences)
@@ -145,8 +139,7 @@ class SoloGame:
                 self.show()
 
 def NewGame(self):
-        print(var.PointUser)
-        print(var.PointEnnemy)
+        
         self.close()
         window1 = MWindow()
         
