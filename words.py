@@ -13,7 +13,7 @@ words = [
     "un cancer de la prostate",
     "mon ex",
     "Jean-Yves le Drian",
-    "l'oeil de verre de \n Jean Marie le Pen",
+    "l'oeil de verre de Jean Marie le Pen",
     "un camembert bien coulant",
     "Brontis",
     "la coulante",

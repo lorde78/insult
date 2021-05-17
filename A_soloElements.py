@@ -153,82 +153,116 @@ from sentences import sentences
 from words import words
 from points import *
 
-def Score(returned_sentence):
 
-    i = 0
-    alors = "z"
-    toggleMot = 0
-    toggleScore = 0
+# def score(motChoisi, Bool):
+#         global resultScore
+#         scorePlayer = 0
+#         scoreBot = 0
+#         if Bool:
+#                 toggleMot = motChoisi
+#                 toggleScore = scorePlayer
+#                 resultScore = 0
+                
+#         else:
+#                 toggleMot = motBot
+#                 toggleScore = scoreBot
+#         i = 0
+#         alors = "z"
+#         while i < len(Pcat1):
+#                 if Pcat1[i] == returned_sentence:
+#                         alors = "a"
+#                 i += 1
+#         if alors == "z":
+#                 j = 0
+#                 while j < len(Pcat2):
+#                         if Pcat2[j] == returned_sentence:
+#                                 alors = "b"
+#                         j += 1
+#         if alors == "z":
+#                 k = 0
+#                 while k < len(Pcat3):
+#                         if Pcat3[k] == returned_sentence:
+#                                 alors = "c"
+#                         k += 1
+#         print(alors)
+#         l = 0
+#         donc = "y"
+#         while l < len(Mcat1):
+#                 if Mcat1[l] == toggleMot:
+#                         donc = "d"
+#                 l += 1
+#         if donc == "y":    
+#                 m = 0
+#                 while m < len(Mcat2):
+#                         if Mcat2[m] == toggleMot:
+#                                 donc == "e"
+#                         m += 1        
+#         if donc == "y":
+#                 n = 0
+#                 while n < len(Mcat3):
+#                         if Mcat3[n] == toggleMot:
+#                                 donc = "f"
+#                         n += 1
+#         print(donc)
 
-    while i < len(Pcat1):
-            if Pcat1[i] == returned_sentence:
-                    alors = "a"
-            i += 1
-    if alors == "z":
-            j = 0
-            while j < len(Pcat2):
-                    if Pcat2[j] == returned_sentence:
-                            alors = "b"
-                    j += 1
-    if alors == "z":
-            k = 0
-            while k < len(Pcat3):
-                    if Pcat3[k] == returned_sentence:
-                            alors = "c"
-                    k += 1
-    l = 0
-    donc = "y"
-    while l < len(Mcat1):
-            if Mcat1[l] == toggleMot:
-                    donc = "d"
-            l += 1
-    if donc == "y":    
-            m = 0
-            while m < len(Mcat2):
-                    if Mcat2[m] == toggleMot:
-                            donc == "e"
-                    m += 1        
-    if donc == "y":
-            n = 0
-            while n < len(Mcat3):
-                    if Mcat3[n] == toggleMot:
-                            donc = "f"
-                    n += 1
+#         valuable = 0
+#         toggleScore = valuable + points[toggleMot]
+#         if alors == "a" and donc == "d":
+#                 toggleScore = toggleScore*2
+#         elif alors == "a" and donc == "f":
+#                 toggleScore = toggleScore*1.5
+#         elif alors == "b" and donc == "e":
+#                 toggleScore = toggleScore*2
+#         elif alors == "c" and donc == "e":
+#                 toggleScore = toggleScore*2
+#         elif alors == "c" and donc == "d":
+#                 toggleScore = toggleScore*1.5
+#         elif alors == "c" and donc == "f":
+#                 toggleScore = toggleScore*1.5
+#         print(toggleScore)
+        
+#         if resultScore == 0:
+#                 resultScore = toggleScore
+                
+#         else:
+#                 total = resultScore - toggleScore
+#                 print(total)
+#                 if total < 0 :
+#                         Victory(False)
+#                         print("victoire du Bot")
+#                         VictoirePartie(self)
+                        
+#                 if total > 0 :
+#                         Victory(True)
+#                         print("victoire du Joueur")
+#                         VictoirePartie(self)
+                                        
+#                 if total == 0 :
+#                         print("Egalite")
+#                         VictoirePartie(self) 
+
+#         return resultScore
+
+# def Victory(gagnerPoint):
+#         if gagnerPoint :
+#                 var.PointUser =+1
+#                 print(var.PointUser)
+#         else :
+#                 var.PointEnnemy =+ 1
+#                 print(var.PointEnnemy)
+
+#         print("scoreUser", var.PointUser)
+#         print("scoreBot", var.PointEnnemy)
+                        
+                
+# def VictoirePartie(self):
+#         if var.PointUser < 5 and var.PointEnnemy < 5 :
+#                 SoloGame.__init__(windowResult) # a modifier, parce que ca entraine la reinitialisation de tout le code surtout le score et ca passe sur une autre fenetre
+#                 self.close() 
+#         elif var.PointUser == 5 :
+#                 print("Player Win")
+#         elif var.PointEnnemy == 5 :
+#                 print("Bot Win")
 
 
-    valuable = 0
-    toggleScore = valuable + points[toggleMot]
-    if alors == "a" and donc == "d":
-            toggleScore = toggleScore*2
-    elif alors == "a" and donc == "f":
-            toggleScore = toggleScore*1.5
-    elif alors == "b" and donc == "e":
-            toggleScore = toggleScore*2
-    elif alors == "c" and donc == "e":
-            toggleScore = toggleScore*2
-    elif alors == "c" and donc == "d":
-            toggleScore = toggleScore*1.5
-    elif alors == "c" and donc == "f":
-            toggleScore = toggleScore*1.5
-
-    
-   
-    resultScore = toggleScore
-            
-    total = resultScore - toggleScore
-
-    if total < 0 :
-     
-            print("victoire du Bot")
-      
-    if total > 0 :
-           
-            print("victoire du Joueur")
-         
-    if total == 0 :
-            print("Egalite")
-         
-
-
-    return resultScore
 

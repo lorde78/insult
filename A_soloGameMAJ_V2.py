@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import * 
+from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 import A_variable as var
 import A_askingName_0 as ask
@@ -9,7 +9,7 @@ from sentences import sentences
 from words import words
 import time
 import A_gameResult as result
-from A_Mwindow import MWindow 
+from A_Mwindow import MWindow
 from points import *
 from A_soloElements import *
 from saut_ligne import Phrase_len
@@ -33,6 +33,7 @@ class SoloGame:
 
 ###PROPOSITIONS#################################
                 messagerie = Messagerie(self)
+
                 
                 def Clicked_ResultUser(who):
                         
@@ -64,7 +65,7 @@ class SoloGame:
                         Propositions(self,liste2,word2)
                         
                         NewGame(self)
-
+                        
                 def Clicked(index,self):
 
                         ##User
@@ -124,10 +125,15 @@ class SoloGame:
 
                 VictoirePartie(self,5)
             
+
 #PHRASE A COMPLETER###############################################################
-                random_phrase = Constructor.random_sentence(sentences)
-                random_phrase = Phrase_len(random_phrase)
-                PhraseToComplete(self,random_phrase)
+                self.Sentence_ = QtWidgets.QLabel(self)
+                self.Sentence_.setGeometry(QtCore.QRect(80, 70, 230, 80))
+                self.Sentence_.setMaximumSize(QtCore.QSize(300, 100))
+                self.Sentence_.setStyleSheet("background-color: "+var.degrade+"; border: 4px solid white; border-radius: 5px;color: white;")
+                self.Sentence_.setAlignment(QtCore.Qt.AlignCenter)
+                self.random_phrase = Constructor.random_sentence(sentences)
+                self.Sentence_.setText(self.random_phrase)
 #Enemy#############################
                 Ennemy(self)
 #POINTS / USERNAME###############################################################
