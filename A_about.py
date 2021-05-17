@@ -30,7 +30,7 @@ class AskingaBoutPage():
 
 def afficherTextAbout(self):
     self.okidoki = QtWidgets.QLabel(self)
-    self.okidoki.setGeometry(QtCore.QRect(60, 280, 230, 80))
+    self.okidoki.setGeometry(QtCore.QRect(30, 300, 300, 80))
     self.okidoki.setMaximumSize(QtCore.QSize(300, 100))
     self.okidoki.setAutoFillBackground(False)
     self.okidoki.setStyleSheet("background-color: "+var.degrade+"; border: 2px solid white; border-radius: 10px;color: white;")

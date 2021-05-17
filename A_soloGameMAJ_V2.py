@@ -7,8 +7,6 @@ import A_askingName_0 as ask
 from constructor_class import *
 from sentences import sentences
 from words import words
-import time
-import A_gameResult as result
 from A_Mwindow import MWindow
 from points import *
 from A_soloElements import *
@@ -16,7 +14,6 @@ from saut_ligne import Phrase_len
 
 
 class SoloGame:
-
 
         def __init__(self):
                 self.end = False

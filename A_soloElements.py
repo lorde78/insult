@@ -41,7 +41,7 @@ def Home_button(self,returnhome):
     self.pushButton.setIcon(icon)
     self.pushButton.setAutoDefault(False)
     self.pushButton.setText(" Home")
-    self.pushButton.clicked.connect(returnhome)
+    self.pushButton.clicked.connect(lambda: returnhome(self))
     self.pushButton.clicked.connect(self.close)
 
 def Panneau (self):

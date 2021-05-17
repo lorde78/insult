@@ -64,7 +64,7 @@ def askingName(self):
     self.pushButton.setChecked(False)
     self.pushButton.setAutoDefault(False)
     self.pushButton.setObjectName("pushButton")
-    self.pushButton.clicked.connect(PressedButton_OK)
+    self.pushButton.clicked.connect(lambda: PressedButton_OK(self))
     self.pushButton.clicked.connect(self.close)
 
     self.horizontalLayout.addWidget(self.pushButton)
@@ -80,15 +80,16 @@ def Surnom(self):
 
 
 window1 = MWindow()   
-def PressedButton_OK():
-
+def PressedButton_OK(self):
+    self.close()
     SoloGame.__init__(window1)
 
 
 window2 = MWindow() 
-def ReturnHome():
-        print("return home")
-        home.HomePage.__init__(window2)
+def ReturnHome(self):
+    self.close()
+    print("return home")
+    home.HomePage.__init__(window2)
     
 
 
