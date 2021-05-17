@@ -81,8 +81,9 @@ def Surnom(self):
 
 window1 = MWindow()   
 def PressedButton_OK():
-    print("Solo Game Start")
+
     SoloGame.__init__(window1)
+
 
 window2 = MWindow() 
 def ReturnHome():

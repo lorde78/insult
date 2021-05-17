@@ -48,5 +48,8 @@ words = [
     "tirer la chasse d'eau",
     "Bernard Tapis",
     "HETIC",
-    "Sans les mains"
+    "Sans les mains",
+    "Elon Musk",
+    "un slip",
+    "KFC"
 ]

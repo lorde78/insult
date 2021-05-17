@@ -45,11 +45,11 @@ def Home_button(self,returnhome):
     self.pushButton.clicked.connect(self.close)
 
 def Panneau (self):
-    panneauInf = QtWidgets.QFrame(self)
-    panneauInf.setGeometry(QtCore.QRect(0, 410, 360, 250))
-    panneauInf.setStyleSheet("QFrame{background-color: "+var.degrade+"; border-radius: 10px;}")
-    panneauInf.setFrameShape(QtWidgets.QFrame.StyledPanel)
-    panneauInf.setFrameShadow(QtWidgets.QFrame.Raised)
+    self.panneauInf = QtWidgets.QFrame(self)
+    self.panneauInf.setGeometry(QtCore.QRect(0, 410, 360, 250))
+    self.panneauInf.setStyleSheet("QFrame{background-color: "+var.degrade+"; border-radius: 10px;}")
+    self.panneauInf.setFrameShape(QtWidgets.QFrame.StyledPanel)
+    self.panneauInf.setFrameShadow(QtWidgets.QFrame.Raised)
 
 def Logo(self):
     self.titreLogo_transp = QtWidgets.QLabel(self)
@@ -58,21 +58,23 @@ def Logo(self):
     self.titreLogo_transp.setPixmap(QtGui.QPixmap(var.path+"/images/LOGO/trans.png"))
     self.titreLogo_transp.setAlignment(QtCore.Qt.AlignCenter)
 
-def PhraseToComplete(self,random_phrase):
-    self.Sentence_ = QtWidgets.QLabel(self)
-    self.Sentence_.setGeometry(QtCore.QRect(80, 70, 230, 80))
-    self.Sentence_.setMaximumSize(QtCore.QSize(300, 100))
-    self.Sentence_.setStyleSheet("background-color: "+var.degrade+"; border: 4px solid white; border-radius: 5px;color: white;")
-    self.Sentence_.setAlignment(QtCore.Qt.AlignCenter)
-    
-    self.Sentence_.setText(random_phrase)
+def PhraseToComplete(self,text):
+        self.Sentence_ = QtWidgets.QLabel(self)
+        self.Sentence_.setGeometry(QtCore.QRect(80, 60, 230, 80))
+        self.Sentence_.setMaximumSize(QtCore.QSize(300, 100))
+        self.Sentence_.setStyleSheet("background-color: "+var.degrade+"; border: 3px solid white; border-radius: 15px;color: white;")
+        self.Sentence_.setAlignment(QtCore.Qt.AlignCenter)
 
-    self.picBot = QtWidgets.QLabel(self)
-    self.picBot.setGeometry(QtCore.QRect(30, 70, 51, 51))
-    self.picBot.setStyleSheet("background:transparent;")
-    self.picBot.setPixmap(QtGui.QPixmap(var.path+"/images/Autre/Botpic.png"))
-    self.picBot.setScaledContents(False)
-    self.picBot.setAlignment(QtCore.Qt.AlignCenter)
+        self.Sentence_.setText(text)
+
+        self.picBot = QtWidgets.QLabel(self)
+        self.picBot.setGeometry(QtCore.QRect(30, 70, 51, 51))
+        self.picBot.setStyleSheet("background:transparent;")
+        self.picBot.setPixmap(QtGui.QPixmap(var.path+"/images/Autre/Botpic.png"))
+        self.picBot.setScaledContents(False)
+        self.picBot.setAlignment(QtCore.Qt.AlignCenter)
+
+        return self.Sentence_
 ####################################################################
 def Ennemy (self):
     ProfilPic_2 = QtWidgets.QLabel(self)
@@ -86,16 +88,18 @@ def Ennemy (self):
     self.pointEnemy.setGeometry(QtCore.QRect(90, 400, 70, 20))
     self.pointEnemy.setStyleSheet(var.stylePointGame)
     self.pointEnemy.setMaximum(5)
-    self.pointEnemy.setValue(var.PointEnnemy)
     self.pointEnemy.setTextVisible(False)
+
+    self.pointEnemy.setValue(var.PointEnnemy)
 
 def User(self,nameUsername):
     self.pointUser = QtWidgets.QProgressBar(self)
     self.pointUser.setGeometry(QtCore.QRect(180, 400, 70, 20))
     self.pointUser.setStyleSheet(var.stylePointGame)
     self.pointUser.setMaximum(5)
-    self.pointUser.setValue(var.PointUser)
     self.pointUser.setTextVisible(False)
+
+    self.pointUser.setValue(var.PointUser)
 
     self.UserName = QtWidgets.QLabel(self)
     self.UserName.setGeometry(QtCore.QRect(259, 396, 95, 27))
@@ -121,28 +125,24 @@ def Messagerie(self):
 
 
 
-###########################@
+###PROPOSITIONS########################@
 #position : 440 490 540 590
 def Create_button(self,text,position):
-    prop = QPushButton(self)
-    prop.setStyleSheet("QPushButton{background-color: white; border: 4px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid "+var.degrade+"; border-radius: 15px; color: white}")
-    prop.setMaximumSize(QtCore.QSize(300, 40))
-    prop.setGeometry(QtCore.QRect(30, position, 300, 201))
-    prop.setText(text)
+        prop = QPushButton(self)
+        prop.setStyleSheet("QPushButton{background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color:"+var.degrade+"}QPushButton:pressed {background-color: "+var.degrade+"; border: 1px solid white; border-radius: 15px; color: white}")
+        prop.setMaximumSize(QtCore.QSize(300, 40))
+        prop.setGeometry(QtCore.QRect(30, position, 300, 201))
+        prop.setText(text)
 
-    return prop
+        return prop
 
 
 def AfficherREP_ (self,phraseReturn):
 
     rep = QPushButton(self)
-    rep.setGeometry(QtCore.QRect(50, 300, 300, 30))
-    rep.setMaximumSize(QtCore.QSize(400, 70))
+    rep.setMaximumSize(QtCore.QSize(500, 70))
     rep.setText(phraseReturn)
-    # if User == True:
-    #     rep.setStyleSheet("background-color: white; border: 1px solid "+var.degrade+"; border-radius: 15px;color: blue;")
-    # else:
-    rep.setStyleSheet("background-color: white; border: 1px solid black; border-radius: 15px;color: black;")
+    rep.setStyleSheet("QPushButton{background-color: white; border: 1px solid black; border-radius: 15px;color:black}QPushButton:pressed {background-color: green; border-radius: 15px; color: white; border: 1px solid white; }")
     self.layout_messagerie.addWidget(rep)
 
     return rep
@@ -152,6 +152,7 @@ from constructor_class import *
 from sentences import sentences
 from words import words
 from points import *
+
 
 # def score(motChoisi, Bool):
 #         global resultScore
@@ -242,27 +243,9 @@ from points import *
 
 #         return resultScore
 
-# def Victory(gagnerPoint):
-#         if gagnerPoint :
-#                 var.PointUser =+1
-#                 print(var.PointUser)
-#         else :
-#                 var.PointEnnemy =+ 1
-#                 print(var.PointEnnemy)
 
-#         print("scoreUser", var.PointUser)
-#         print("scoreBot", var.PointEnnemy)
                         
                 
-# def VictoirePartie(self):
-#         if var.PointUser < 5 and var.PointEnnemy < 5 :
-#                 SoloGame.__init__(windowResult) # a modifier, parce que ca entraine la reinitialisation de tout le code surtout le score et ca passe sur une autre fenetre
-#                 self.close() 
-#         elif var.PointUser == 5 :
-#                 print("Player Win")
-#         elif var.PointEnnemy == 5 :
-#                 print("Bot Win")
 
 
-def ScoreBYNassim(mot):
-    print(mot)
+
