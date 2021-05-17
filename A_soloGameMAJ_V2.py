@@ -67,13 +67,12 @@ class SoloGame:
                         NewGame(self)
                         
                 def Clicked(index,self):
-
                         ##User
                         phrase = random_phrase.format(self.mots[index])
                         phrase = Phrase_len(phrase)
                         self.repUser = AfficherREP_(self,phrase)
                         self.repUser.clicked.connect(lambda: Clicked_ResultUser("user"))
-                       
+
                         ##Bot
                         phraseBot = random_phrase.format(random.choice(words))
                         phraseBot = Phrase_len(phraseBot)
@@ -124,7 +123,7 @@ class SoloGame:
                                 print("Bot Win")
 
                 VictoirePartie(self,5)
-            
+                # La liste de mots n'étant pas assez longue la partie va s'arrêter en cours de route, nous vous conseillons de modifier le paramètre VictoirePartie(self,3)
 
 #PHRASE A COMPLETER###############################################################
                 self.Sentence_ = QtWidgets.QLabel(self)

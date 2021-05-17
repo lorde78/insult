@@ -1,13 +1,9 @@
 # coding: utf-8
-# !/usr/local/bin/python3
+
 import random
 from words import words
 from sentences import sentences
 from points import Mcat1, Mcat2, Mcat3, Pcat1, Pcat2, Pcat3, points
-
-
-
-
 
 
 # Using static methods because there is no init to set up but all the methods belongs to the construct Class
