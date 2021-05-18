@@ -89,6 +89,7 @@ def AfficherAskingPage(self):
         self.close()
         AskingNamePage.__init__(window)
 
+window3 = MWindow()
 def AfficherAboutPage(self):
         self.close()
         AskingaBoutPage.__init__(window)
