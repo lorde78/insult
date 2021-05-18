@@ -31,6 +31,19 @@ class SoloGame:
                 Panneau(self)
 ###PROPOSITIONS#################################
                 messagerie = Messagerie(self)
+<<<<<<< Updated upstream
+=======
+                
+                
+                def Clicked_ResultUser(who):
+                        
+                        if who == "bot":
+                                PointEnnemy = 0
+                                print("Click BOT ")
+                                PointEnnemy += 1
+                                self.pointEnemy.setValue(PointEnnemy)
+                                #return var.PointEnnemy
+>>>>>>> Stashed changes
 
                 # messagerie.close()
 
@@ -56,6 +69,7 @@ class SoloGame:
                 #         repBot = AfficherREP_(self,phraseBot)
                 #         repBot.clicked.connect(lambda: Clicked_ResultUser("bot"))
 
+<<<<<<< Updated upstream
                 
                 def AfficherREP (self,phraseReturn):
                         print("RepUSER")
@@ -65,6 +79,32 @@ class SoloGame:
                         self.repUser2.setAlignment(QtCore.Qt.AlignCenter)
                         self.repUser2.setText(phraseReturn)
                         self.layout_messagerie.addWidget(self.repUser2)
+=======
+                        elif who == "user":
+                                PointUser = 0
+                                print("Click User")
+                                PointUser += 1
+                
+                                self.pointUser.setValue(PointUser)
+                                #return var.PointUser
+
+                        #self.repUser.close()
+                        #self.repBot.close()
+                        self.proposition1.setVisible(True)
+                        self.proposition2.setVisible(True)
+                        self.proposition3.setVisible(True)
+                        self.proposition4.setVisible(True)
+
+                        random_phrase2 = Constructor.random_sentence(sentences)
+                        random_phrase2 = Phrase_len(random_phrase2)
+                        PhraseToComplete(self,random_phrase2)
+
+                        liste2 = []
+                        word2 = Constructor.test_choose_word(words)
+                        Propositions(self,liste2,word2)
+                        
+                        NewGame(self)
+>>>>>>> Stashed changes
 
                 windowResult = MWindow()
                 def Clicked(index,self):
@@ -136,6 +176,7 @@ class SoloGame:
 
                 print(self.mots)
 
+<<<<<<< Updated upstream
                 motlol = "hello"
                 ScoreBYNassim(motlol)
 
@@ -254,6 +295,20 @@ class SoloGame:
 
 
 
+=======
+                        
+                
+                def VictoirePartie(self, PointUser, PointEnnemy):
+                        if PointUser < 5 and PointEnnemy < 5 :
+                                # SoloGame.__init__(windowResult) # a modifier, parce que ca entraine la reinitialisation de tout le code surtout le score et ca passe sur une autre fenetre
+                                self.close() 
+                        elif PointUser == 5 :
+                                print("Player Win")
+                        elif PointEnnemy == 5 :
+                                print("Bot Win")
+
+            
+>>>>>>> Stashed changes
 #PHRASE A COMPLETER###############################################################
                 self.Sentence_ = QtWidgets.QLabel(self)
                 self.Sentence_.setGeometry(QtCore.QRect(80, 70, 230, 80))
@@ -271,5 +326,13 @@ class SoloGame:
                 Logo(self)
 ############
                 self.show()
+<<<<<<< Updated upstream
 resultScore = 0
+=======
+
+def NewGame(self):
+        self.close()
+        window1 = MWindow()   
+        SoloGame.__init__(NewGame)
+>>>>>>> Stashed changes
 

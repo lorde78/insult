@@ -14,10 +14,10 @@ styleButtonHome = "QPushButton {background-color: white; border: 1px solid "+deg
 stylePointGame = "QProgressBar{border-radius: 10px;border: 2px solid #2196F3}QProgressBar::chunk {background-color:"+degrade+";margin: 3.5px;border-radius: 4px;padding:1px}"
 
 
-PointUser = 0
+#PointUser = 0
 
 UserEnnemy = ChoixNameEnemy()
-PointEnnemy = 0
+#PointEnnemy = 0
 PicEnnemy = path+"/images/LOGO/logo-blue.png"
 styleProfilPic = "border: 3px solid "+degrade+";border-radius: 20px;"
 
